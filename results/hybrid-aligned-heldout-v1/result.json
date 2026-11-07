@@ -1,0 +1,94 @@
+{
+  "model": "qwen3.8-27b-hybrid-aligned-branch-medium-v2",
+  "reasoning_effort": "medium",
+  "split": "heldout",
+  "fixture_sha256": "a46cef063c0399f632e595a0dcf9c416484eacdf65c78260837d6e9acdce17d8",
+  "max_tokens": 4096,
+  "sampling": {
+    "temperature": 1.0,
+    "top_p": 0.95,
+    "top_k": 20,
+    "min_p": 0.0,
+    "seed": 42
+  },
+  "promotion_evidence": false,
+  "codes": {
+    "nested_transactions": {
+      "passed": true,
+      "finish_reason": "stop",
+      "usage": {
+        "completion_tokens": 2032,
+        "prompt_tokens": 112,
+        "total_tokens": 2144,
+        "prompt_tokens_details": {
+          "cached_tokens": 0
+        }
+      },
+      "timings": {
+        "cache_n": 0,
+        "prompt_n": 112,
+        "prompt_ms": 540.603,
+        "prompt_per_token_ms": 4.8268125,
+        "prompt_per_second": 207.17606080617387,
+        "predicted_n": 2032,
+        "predicted_ms": 78265.157,
+        "predicted_per_token_ms": 38.53528163466273,
+        "predicted_per_second": 25.950245011327326
+      },
+      "wall_seconds": 78.88549335702555
+    },
+    "exact_arithmetic": {
+      "passed": true,
+      "finish_reason": "stop",
+      "usage": {
+        "completion_tokens": 2832,
+        "prompt_tokens": 109,
+        "total_tokens": 2941,
+        "prompt_tokens_details": {
+          "cached_tokens": 0
+        }
+      },
+      "timings": {
+        "cache_n": 0,
+        "prompt_n": 109,
+        "prompt_ms": 404.579,
+        "prompt_per_token_ms": 3.7117339449541285,
+        "prompt_per_second": 269.4158619206632,
+        "predicted_n": 2832,
+        "predicted_ms": 111397.229,
+        "predicted_per_token_ms": 39.34907417873543,
+        "predicted_per_second": 25.413558536541334
+      },
+      "wall_seconds": 112.48514330602484
+    },
+    "strong_components": {
+      "passed": true,
+      "finish_reason": "stop",
+      "usage": {
+        "completion_tokens": 1903,
+        "prompt_tokens": 94,
+        "total_tokens": 1997,
+        "prompt_tokens_details": {
+          "cached_tokens": 0
+        }
+      },
+      "timings": {
+        "cache_n": 0,
+        "prompt_n": 94,
+        "prompt_ms": 402.23,
+        "prompt_per_token_ms": 4.2790425531914895,
+        "prompt_per_second": 233.69713845312384,
+        "predicted_n": 1903,
+        "predicted_ms": 74522.312,
+        "predicted_per_token_ms": 39.18102628811777,
+        "predicted_per_second": 25.522557593221205
+      },
+      "wall_seconds": 75.5599021219532
+    }
+  },
+  "other": {},
+  "timing_note": "Concurrent user activity and background downloads are possible; not a controlled TPS benchmark.",
+  "coding_passed": 3,
+  "coding_total": 3,
+  "complete": true
+}

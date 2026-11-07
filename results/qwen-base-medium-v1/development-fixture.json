@@ -1,0 +1,42 @@
+[
+  [
+    "merge",
+    "Implement merge_intervals(intervals) for closed intervals on the real number line with integer endpoints. Merge exactly when next_start <= current_end. Shared endpoints merge: [1,3] and [3,4] become [1,4]. Consecutive integer endpoints do NOT merge: [1,4] and [5,7] stay separate. Return sorted lists. Do not mutate input; handle empty input.",
+    "a=[[5,7],[1,3],[3,4]]; assert merge_intervals(a)==[[1,4],[5,7]]; assert a==[[5,7],[1,3],[3,4]]\nassert merge_intervals([])==[]\nassert merge_intervals([[1,10],[2,3],[10,11]])==[[1,11]]"
+  ],
+  [
+    "cache",
+    "Implement class LRUCache(capacity) with get(key) returning -1 for missing, and put(key,value). Evict least recently used on overflow. Handle capacity zero. Use O(1) operations.",
+    "c=LRUCache(2); c.put(1,1); c.put(2,2); assert c.get(1)==1; c.put(3,3); assert c.get(2)==-1; c.put(1,8); c.put(4,4); assert c.get(3)==-1; assert c.get(1)==8\nz=LRUCache(0); z.put(1,2); assert z.get(1)==-1"
+  ],
+  [
+    "toposort",
+    "Implement topological_sort(graph) where graph maps nodes to lists of outgoing neighbors. Include neighbor-only nodes. Return a valid order, raising ValueError on any cycle. Handle empty graph.",
+    "g={\"a\":[\"b\",\"c\"],\"b\":[\"d\"],\"c\":[\"d\"]}; o=topological_sort(g); assert set(o)==set(\"abcd\"); p={x:i for i,x in enumerate(o)}; assert all(p[a]<p[b] for a,bs in g.items() for b in bs)\nassert topological_sort({})==[]\ntry:\n topological_sort({\"a\":[\"b\"],\"b\":[\"a\"]})\nexcept ValueError:\n pass\nelse:\n raise AssertionError(\"cycle not detected\")"
+  ],
+  [
+    "json_patch",
+    "Implement apply_patch(document, operations), supporting only top-level JSON object keys and operations add, replace, remove, test. Each op has op, path and optionally value. Paths begin / and encode ~ as ~0 and / as ~1. Reject invalid escapes or nested paths with ValueError. Empty-string key is valid as path /. add may overwrite; replace/remove/test require an existing key. Failed test or invalid operation raises ValueError. Return a deep copy, never mutate document, operations, or nested values. Python standard library only.",
+    "import copy\nd={'a':{'x':[1]},'a/b':3,'~':4,'':9}; old=copy.deepcopy(d)\no=apply_patch(d,[{'op':'replace','path':'/a~1b','value':8},{'op':'remove','path':'/~0'},{'op':'test','path':'/','value':9}])\nassert o['a/b']==8 and '~' not in o and d==old\no['a']['x'].append(2); assert d==old\nops=[{'op':'add','path':'/z','value':{'x':[]}}];o=apply_patch(d,ops);o['z']['x'].append(2);assert ops[0]['value']=={'x':[]}\nfor ops in [[{'op':'test','path':'/','value':0}],[{'op':'replace','path':'/missing','value':1}],[{'op':'remove','path':'/a/x'}],[{'op':'add','path':'/a~2','value':0}]]:\n try: apply_patch(d,ops)\n except ValueError: pass\n else: raise AssertionError('invalid patch accepted')\nassert d==old"
+  ],
+  [
+    "ttl_cache",
+    "Implement TTLCache(capacity, clock), with put(key,value,ttl), get(key,default=None), and len(cache). clock() gives monotonic seconds. TTL starts on put; expires when now >= expiry. get does not refresh TTL but makes live entries most recently used. put replaces and refreshes. On overflow evict least recently used live entry after removing expired entries. ttl<=0 removes the key. capacity=0 stores nothing. len excludes expired entries. Standard library only.",
+    "now=[0];c=TTLCache(2,lambda:now[0]);c.put('a',1,10);c.put('b',2,2)\nnow[0]=2;assert c.get('b','missing')=='missing';assert len(c)==1\nc.put('c',3,20);assert c.get('a')==1;c.put('d',4,20);assert c.get('c') is None\nnow[0]=10;assert c.get('a') is None;assert len(c)==1\nc.put('d',5,1);now[0]=11;assert c.get('d') is None\nc.put('x',1,3);c.put('x',2,0);assert len(c)==0\nz=TTLCache(0,lambda:0);z.put('a',1,20);assert len(z)==0"
+  ],
+  [
+    "utf8_stream",
+    "Implement decode_chunks(chunks), accepting an iterable of bytes chunks and returning the combined UTF-8 string. Decode incrementally with strict error handling: raise UnicodeDecodeError on invalid sequences or incomplete final sequences. Empty chunks and arbitrary split boundaries must work. Do not concatenate all input bytes first; standard library only.",
+    "s='A\u20ac\ud800\udf48\u00e9\u4e2d\u6587\\n';raw=s.encode();assert decode_chunks([])==''\nfor i in range(len(raw)+1):assert decode_chunks([raw[:i],b'',raw[i:]])==s\nassert decode_chunks(bytes([b]) for b in raw)==s\nfor bad in [b'\\xff',b'\\xe2\\x82',b'\\xc0\\xaf',b'\\xed\\xa0\\x80']:\n try:decode_chunks([bad])\n except UnicodeDecodeError:pass\n else:raise AssertionError('invalid UTF-8 accepted')"
+  ],
+  [
+    "dependency_levels",
+    "Implement dependency_levels(graph). graph maps string task names to lists of prerequisite task names. Include prerequisite-only names. Return sorted lists of tasks by earliest runnable parallel batch: tasks in a batch depend only on earlier batches. Deduplicate repeated prerequisites. Raise ValueError for cycles including self cycles. Do not mutate input; empty graph returns [].",
+    "g={'build':['parse','parse'],'test':['build'],'docs':[],'parse':['fetch']}\nassert dependency_levels(g)==[['docs','fetch'],['parse'],['build'],['test']]\nassert g['build']==['parse','parse'];assert dependency_levels({})==[]\nassert dependency_levels({'a':['b'],'c':['b']})==[['b'],['a','c']]\nfor g in [{'x':['x']},{'a':['b'],'b':['a']},{'ok':[],'x':['y'],'y':['x']}]:\n try:dependency_levels(g)\n except ValueError:pass\n else:raise AssertionError('cycle accepted')"
+  ],
+  [
+    "overlap_search",
+    "Implement find_all(text, pattern) returning starting indices of every substring occurrence, including overlaps. Empty pattern matches all len(text)+1 boundaries. Work on Python strings and Unicode. Use O(len(text)+len(pattern)) time; no regex or external packages.",
+    "import random\nassert find_all('aaaa','aa')==[0,1,2];assert find_all('abc','')==[0,1,2,3]\nassert find_all('\u00e9\u00e9\u00e9','\u00e9\u00e9')==[0,1]\nr=random.Random(294)\nfor _ in range(200):\n s=''.join(r.choice('ab\u00e9') for _ in range(r.randrange(30)));p=''.join(r.choice('ab\u00e9') for _ in range(r.randrange(8)))\n expected=[i for i in range(len(s)+1) if s.startswith(p,i)];assert find_all(s,p)==expected\nassert len(find_all('a'*100000,'a'*1000))==99001"
+  ]
+]

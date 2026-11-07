@@ -1,0 +1,46 @@
+{
+  "model": "qwen3.8-27b-qwen-base-medium-v1",
+  "reasoning_effort": "medium",
+  "split": "heldout",
+  "fixture_sha256": "365ff5a3bfab7b52ed6267e697bf3cdf3fd06513b31566bfbe6e62ea3a320365",
+  "max_tokens": 16384,
+  "sampling": {
+    "temperature": 1.0,
+    "top_p": 0.95,
+    "top_k": 20,
+    "min_p": 0.0,
+    "seed": 42
+  },
+  "promotion_evidence": false,
+  "codes": {
+    "exact_arithmetic": {
+      "passed": true,
+      "finish_reason": "stop",
+      "usage": {
+        "completion_tokens": 5136,
+        "prompt_tokens": 109,
+        "total_tokens": 5245,
+        "prompt_tokens_details": {
+          "cached_tokens": 0
+        }
+      },
+      "timings": {
+        "cache_n": 0,
+        "prompt_n": 109,
+        "prompt_ms": 964.328,
+        "prompt_per_token_ms": 8.847045871559633,
+        "prompt_per_second": 113.0320803709941,
+        "predicted_n": 5136,
+        "predicted_ms": 197828.331,
+        "predicted_per_token_ms": 38.52547828627069,
+        "predicted_per_second": 25.956848415205
+      },
+      "wall_seconds": 198.93280447402503
+    }
+  },
+  "other": {},
+  "timing_note": "Concurrent user activity and background downloads are possible; not a controlled TPS benchmark.",
+  "coding_passed": 1,
+  "coding_total": 1,
+  "complete": true
+}

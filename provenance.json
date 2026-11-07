@@ -1,0 +1,39 @@
+{
+  "name": "Chimera-27B-v0.1",
+  "status": "experimental shared-expert graft; not a sparse MoE",
+  "qwen": {
+    "repo": "Qwen/Qwen3.8-27B",
+    "revision": "37561816e66b5b9153b1b64c10968c18c1e6f4a0",
+    "license": "Apache-2.0"
+  },
+  "deepseek": {
+    "repo": "deepseek-ai/DeepSeek-V4.1-Flash-1017",
+    "revision": "1bae0e1088993b9b82de08f59de5be5a34e42170",
+    "license": "MIT"
+  },
+  "runtime": {
+    "repo": "https://github.com/ggml-org/llama.cpp",
+    "revision": "3cf03257f219afbe7334045ff7c6a06ac68c627d",
+    "source_archive_sha256": "c076d7534afa0e5d0ec2a0d425b11e791c16f3de0d727221aea071cef156a280",
+    "patch": "runtime/chimera.patch",
+    "license": "MIT"
+  },
+  "donor": {
+    "layer": 0,
+    "kind": "shared expert",
+    "parameters": 35389440,
+    "width": 2304,
+    "hidden_size": 5120,
+    "scale": 0.1,
+    "swiglu_clamp": 10.0,
+    "stored_type": "Q8_0"
+  },
+  "backbone_ffn_width": 17408,
+  "full_dense_backbone_retained": true,
+  "trained_router": false,
+  "gradient_training": false,
+  "linear_calibration": true,
+  "calibration_proxy": "Quantized DeepSeek Coder backbone for activations; donated shared-expert weights are from the official DeepSeek revision.",
+  "results_path_redaction": "Absolute machine paths replaced by <experiment>, <user-home>, and <ai-storage>. Historical filenames and model aliases retained.",
+  "internal_gguf_names": "Historical experimental names retained byte-for-byte; released files renamed Chimera without reserialization."
+}

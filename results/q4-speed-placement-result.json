@@ -1,0 +1,109 @@
+{
+  "best": {
+    "label": "q4-mmq-cut2-draft5",
+    "draft_max": 5,
+    "cutoff": 2,
+    "median_decode_tps": 69.0092316717284
+  },
+  "configurations": [
+    {
+      "label": "q4-draft-0",
+      "draft_max": 0,
+      "median_decode_tps": 39.985992911896254
+    },
+    {
+      "label": "q4-draft-3",
+      "draft_max": 3,
+      "median_decode_tps": 61.05324408044223
+    },
+    {
+      "label": "q4-draft-6",
+      "draft_max": 6,
+      "median_decode_tps": 54.292428789852195
+    },
+    {
+      "label": "q4-draft2-refine",
+      "draft_max": 2,
+      "median_decode_tps": 63.85782700057122
+    },
+    {
+      "label": "q4-draft3-graphopt",
+      "draft_max": 3,
+      "graph_opt": 1,
+      "median_decode_tps": 60.547567890243286
+    },
+    {
+      "label": "q4-draft3-pmin03",
+      "draft_max": 3,
+      "p_min": 0.3,
+      "median_decode_tps": 62.55874057754849
+    },
+    {
+      "label": "q4-draft3-graphopt-pmin03",
+      "draft_max": 3,
+      "graph_opt": 1,
+      "p_min": 0.3,
+      "median_decode_tps": 61.83229983909091
+    },
+    {
+      "label": "q4-draft8-refine",
+      "draft_max": 8,
+      "median_decode_tps": 60.47096553998562
+    },
+    {
+      "label": "q4-mmq-cut1-draft2",
+      "draft_max": 2,
+      "cutoff": 1,
+      "median_decode_tps": 54.57800210498887
+    },
+    {
+      "label": "q4-mmq-cut1-draft3",
+      "draft_max": 3,
+      "cutoff": 1,
+      "median_decode_tps": 59.797235138009206
+    },
+    {
+      "label": "q4-mmq-cut2-draft3",
+      "draft_max": 3,
+      "cutoff": 2,
+      "median_decode_tps": 59.68206035856078
+    },
+    {
+      "label": "q4-mmq-cut2-draft6",
+      "draft_max": 6,
+      "cutoff": 2,
+      "median_decode_tps": 68.19450816378063
+    },
+    {
+      "label": "q4-mmq-cut2-draft4",
+      "draft_max": 4,
+      "cutoff": 2,
+      "median_decode_tps": 67.4471127139742
+    },
+    {
+      "label": "q4-mmq-cut2-draft5",
+      "draft_max": 5,
+      "cutoff": 2,
+      "median_decode_tps": 69.0092316717284
+    },
+    {
+      "label": "q4-tensor-draft2",
+      "draft_max": 2,
+      "split_mode": "tensor",
+      "cache_type": "f16",
+      "median_decode_tps": 60.58968216959408
+    },
+    {
+      "label": "q4-layer-draft2",
+      "draft_max": 2,
+      "split_mode": "layer",
+      "median_decode_tps": 55.01442102271019
+    }
+  ],
+  "context": 131072,
+  "target_device": "CUDA0 (RTX 3090)",
+  "vision_device": "CUDA1 (Tesla)",
+  "quality_validated": false,
+  "development_label": "hybrid-q4-final-development-v4",
+  "heldout_label": "hybrid-q4-final-heldout-v4"
+}

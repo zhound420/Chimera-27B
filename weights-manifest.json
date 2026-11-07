@@ -1,0 +1,18 @@
+{
+  "Chimera-27B-v0.1-Q4_K_M.gguf": {
+    "bytes": 16848316608,
+    "sha256": "843254a91721a168fe7811db7b32f0c4f13ddb3a7cddcb3b10e5880feef48bf4"
+  },
+  "Chimera-27B-v0.1-Q8_0.gguf": {
+    "bytes": 29084686528,
+    "sha256": "f48c057938af255c5b3165d37c95f74bc5102f3bc6c3e9159a874bf4c5dd1865"
+  },
+  "mmproj-Qwen3.8-27B-BF16.gguf": {
+    "bytes": 931145952,
+    "sha256": "341cbbda4698b7ab877bb7dfc597b468f24789131476b0ab5d9a4c15681f49d2"
+  },
+  "reconstruction/shared-aligned-fp32.npz": {
+    "bytes": 141558490,
+    "sha256": "44900634ddce1ccc9884b71379fb33af51db536e756e8d9a2bc8343693ed91a6"
+  }
+}

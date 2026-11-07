@@ -1,0 +1,48 @@
+{
+  "model": "qwen3.8-27b-deepseek-hybrid-q4",
+  "reasoning_effort": "medium",
+  "split": "heldout",
+  "fixture_sha256": "365ff5a3bfab7b52ed6267e697bf3cdf3fd06513b31566bfbe6e62ea3a320365",
+  "max_tokens": 16384,
+  "sampling": {
+    "temperature": 1.0,
+    "top_p": 0.95,
+    "top_k": 20,
+    "min_p": 0.0,
+    "seed": 42
+  },
+  "promotion_evidence": false,
+  "codes": {
+    "exact_arithmetic": {
+      "passed": true,
+      "finish_reason": "stop",
+      "usage": {
+        "completion_tokens": 5261,
+        "prompt_tokens": 109,
+        "total_tokens": 5370,
+        "prompt_tokens_details": {
+          "cached_tokens": 0
+        }
+      },
+      "timings": {
+        "cache_n": 0,
+        "prompt_n": 109,
+        "prompt_ms": 462.638,
+        "prompt_per_token_ms": 4.244385321100917,
+        "prompt_per_second": 235.60537612561012,
+        "predicted_n": 5261,
+        "predicted_ms": 74344.626,
+        "predicted_per_token_ms": 14.133959315589355,
+        "predicted_per_second": 70.75158330879222,
+        "draft_n": 6625,
+        "draft_n_accepted": 3935
+      },
+      "wall_seconds": 75.90835618699202
+    }
+  },
+  "other": {},
+  "timing_note": "Concurrent user activity and background downloads are possible; not a controlled TPS benchmark.",
+  "coding_passed": 1,
+  "coding_total": 1,
+  "complete": true
+}

@@ -1,0 +1,10 @@
+{
+  "input": {
+    "constant_predictor_relative_l2": 0.8398796319961548,
+    "squared_error_reduction_vs_constant": 0.5808726069548258
+  },
+  "output": {
+    "constant_predictor_relative_l2": 0.15888255834579468,
+    "squared_error_reduction_vs_constant": 0.6402290258364507
+  }
+}

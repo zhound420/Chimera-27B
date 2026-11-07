@@ -1,0 +1,1922 @@
+[
+  {
+    "split": "calibration",
+    "source": "src/models/qwen35.cpp",
+    "line": 369,
+    "text": "ggml_tensor * alpha_biased   = ggml_add(ctx0, alpha, model.layers[il].ssm_dt);"
+  },
+  {
+    "split": "calibration",
+    "source": "src/models/kimi-k3.cpp",
+    "line": 362,
+    "text": "int64_t n_seq_tokens, int64_t n_seqs, int64_t n_tokens, int64_t kv_head,"
+  },
+  {
+    "split": "calibration",
+    "source": "src/llama-kv-cache-dsv4.cpp",
+    "line": 82,
+    "text": "static llama_ubatch dsv4_build_raw_write_ubatch(const llama_ubatch & ubatch) {"
+  },
+  {
+    "split": "calibration",
+    "source": "src/models/jais2.cpp",
+    "line": 83,
+    "text": "auto [Qcur, Kcur, Vcur] = build_qkv(model.layers[il], cur,"
+  },
+  {
+    "split": "calibration",
+    "source": "common/arg.cpp",
+    "line": 871,
+    "text": "\"usage:\\n%s\\n\\nto show complete usage, run with -h\","
+  },
+  {
+    "split": "calibration",
+    "source": "src/llama-arch.cpp",
+    "line": 1048,
+    "text": "for (const auto & kv : LLM_ARCH_NAMES) { // NOLINT"
+  },
+  {
+    "split": "calibration",
+    "source": "src/llama-sampler.cpp",
+    "line": 3288,
+    "text": "/* .apply             = */ llama_sampler_top_n_sigma_apply,"
+  },
+  {
+    "split": "calibration",
+    "source": "common/chat-auto-parser-generator.cpp",
+    "line": 204,
+    "text": "if (!format.function_field.empty() && format.function_field != \"function\" &&"
+  },
+  {
+    "split": "calibration",
+    "source": "src/models/deepseek4.cpp",
+    "line": 1405,
+    "text": "llm_graph_input_attn_k_iswa * inp_attn = build_attn_inp_k_iswa();"
+  },
+  {
+    "split": "calibration",
+    "source": "src/llama-memory-hybrid-iswa.cpp",
+    "line": 274,
+    "text": "const llama_ubatch & llama_memory_hybrid_iswa_context::get_ubatch() const {"
+  },
+  {
+    "split": "calibration",
+    "source": "common/parsers/cohere2moe.cpp",
+    "line": 104,
+    "text": "if (!has_tools || inputs.tool_choice == COMMON_CHAT_TOOL_CHOICE_NONE) {"
+  },
+  {
+    "split": "calibration",
+    "source": "src/models/chameleon.cpp",
+    "line": 129,
+    "text": "inpSA = ggml_get_rows(ctx0, inpSA, inp_out_ids);"
+  },
+  {
+    "split": "calibration",
+    "source": "src/models/qwen3vl.cpp",
+    "line": 5,
+    "text": "ml.get_key_or_arr(LLM_KV_ROPE_DIMENSION_SECTIONS, hparams.rope_sections, 4, true);"
+  },
+  {
+    "split": "calibration",
+    "source": "common/jinja/lexer.cpp",
+    "line": 94,
+    "text": "auto consume_numeric = [&]() -> std::string {"
+  },
+  {
+    "split": "calibration",
+    "source": "src/llama-kv-cache.cpp",
+    "line": 1513,
+    "text": "for (uint32_t s = 0; s < sinfo.n_stream(); ++s) {"
+  },
+  {
+    "split": "calibration",
+    "source": "common/arg.cpp",
+    "line": 1984,
+    "text": "[](common_params & params, const std::string & value) {"
+  },
+  {
+    "split": "calibration",
+    "source": "src/llama-arch.cpp",
+    "line": 639,
+    "text": "{ LLM_TENSOR_CHANNEL_MIX_VALUE,                      \"blk.%d.channel_mix_value\" },"
+  },
+  {
+    "split": "calibration",
+    "source": "common/chat-diff-analyzer.cpp",
+    "line": 1181,
+    "text": "function.name_suffix += suf_result.tags[\"ext\"];"
+  },
+  {
+    "split": "calibration",
+    "source": "src/models/minimax-m3.cpp",
+    "line": 455,
+    "text": "ggml_tensor * cb_s = ggml_view_1d(ctx0, msa->cell_blk, n_kv,"
+  },
+  {
+    "split": "calibration",
+    "source": "src/llama-model.cpp",
+    "line": 952,
+    "text": "case LLM_TYPE_LARGE:         return \"0.8B\";"
+  },
+  {
+    "split": "calibration",
+    "source": "src/llama-graph.cpp",
+    "line": 3336,
+    "text": "auto inp_swa = std::make_unique<llm_graph_input_attn_k>(hparams, cparams, mctx_cur->get_swa());"
+  },
+  {
+    "split": "calibration",
+    "source": "src/models/gemma3.cpp",
+    "line": 131,
+    "text": "Qcur = build_norm(Qcur, model.layers[il].attn_q_norm, NULL, LLM_NORM_RMS, il);"
+  },
+  {
+    "split": "calibration",
+    "source": "src/models/rwkv6.cpp",
+    "line": 55,
+    "text": "layer.time_mix_w1 = create_tensor(tn(LLM_TENSOR_TIME_MIX_W1, \"weight\", i), {n_embd, time_mix_extra_dim * 5}, 0);"
+  },
+  {
+    "split": "calibration",
+    "source": "src/unicode.cpp",
+    "line": 1072,
+    "text": "bpe_offsets = unicode_regex_split_custom_newlines(text, offsets);"
+  },
+  {
+    "split": "calibration",
+    "source": "common/imatrix-loader.cpp",
+    "line": 123,
+    "text": "for (struct ggml_tensor * cur = ggml_get_first_tensor(ctx); cur; cur = ggml_get_next_tensor(ctx, cur)) {"
+  },
+  {
+    "split": "calibration",
+    "source": "src/models/granite-swa.cpp",
+    "line": 56,
+    "text": "void llama_model_granite_swa::load_arch_tensors(llama_model_loader &) {"
+  },
+  {
+    "split": "calibration",
+    "source": "common/chat-diff-analyzer.cpp",
+    "line": 938,
+    "text": "std::string::npos) {  // handle both string and JSON obj variants"
+  },
+  {
+    "split": "calibration",
+    "source": "src/llama-quant.cpp",
+    "line": 1474,
+    "text": "init_quantize_state_counters(*qs, metadata);"
+  },
+  {
+    "split": "calibration",
+    "source": "src/llama-memory-hybrid.cpp",
+    "line": 177,
+    "text": "llama_pos llama_memory_hybrid::seq_pos_max(llama_seq_id seq_id) const {"
+  },
+  {
+    "split": "calibration",
+    "source": "src/llama-model.cpp",
+    "line": 974,
+    "text": "case LLM_TYPE_26B_A4B:       return \"26B.A4B\";"
+  },
+  {
+    "split": "calibration",
+    "source": "common/peg-parser.cpp",
+    "line": 1838,
+    "text": "return json{{\"type\", \"string\"}, {\"delimiter\", std::string(1, p.delimiter)}};"
+  },
+  {
+    "split": "calibration",
+    "source": "common/peg-parser.cpp",
+    "line": 1181,
+    "text": "return rule(\"single-quoted-string\", [this]() {"
+  },
+  {
+    "split": "calibration",
+    "source": "src/llama-graph.cpp",
+    "line": 3877,
+    "text": "int32_t llama_relative_position_bucket(llama_pos x, llama_pos y, uint64_t n_buckets, bool bidirectional) {"
+  },
+  {
+    "split": "calibration",
+    "source": "common/sampling.cpp",
+    "line": 586,
+    "text": "struct llama_sampler * common_sampler_get(const struct common_sampler * gsmpl) {"
+  },
+  {
+    "split": "calibration",
+    "source": "src/models/delta-net-base.cpp",
+    "line": 467,
+    "text": "cb(conv_states, \"conv_states_reshaped\", il);"
+  },
+  {
+    "split": "calibration",
+    "source": "src/llama-model.cpp",
+    "line": 897,
+    "text": "case LLM_TYPE_700M:          return \"700M\";"
+  },
+  {
+    "split": "calibration",
+    "source": "src/llama-model.cpp",
+    "line": 1284,
+    "text": "ml.get_key(LLM_KV_CONVNEXT_BLOCK_COUNT,      hparams.convnext.n_layer);"
+  },
+  {
+    "split": "calibration",
+    "source": "src/llama-model.cpp",
+    "line": 1771,
+    "text": "std::vector<ggml_backend_buffer_ptr> bufs;"
+  },
+  {
+    "split": "calibration",
+    "source": "src/llama-graph.cpp",
+    "line": 300,
+    "text": "(cparams.pooling_type == LLAMA_POOLING_TYPE_RANK && (arch == LLM_ARCH_QWEN3 || arch == LLM_ARCH_QWEN3VL)) // qwen3 reranking & embedding models use last token"
+  },
+  {
+    "split": "calibration",
+    "source": "src/llama-quant.cpp",
+    "line": 872,
+    "text": "case LLAMA_FTYPE_MOSTLY_Q5_K_M:  return GGML_TYPE_Q5_K;"
+  },
+  {
+    "split": "calibration",
+    "source": "src/llama-kv-cache-dsv4.cpp",
+    "line": 1812,
+    "text": "sinfos_read(std::move(sinfos_swa_read)),"
+  },
+  {
+    "split": "calibration",
+    "source": "src/models/minimax-01.cpp",
+    "line": 423,
+    "text": "cur   = ggml_get_rows(ctx0,   cur, inp_out_ids);"
+  },
+  {
+    "split": "calibration",
+    "source": "src/llama-model.cpp",
+    "line": 491,
+    "text": "return get_tensor_config_impl(GGML_BACKEND_SPLIT_AXIS_1, \"attn_output_a.weight\");"
+  },
+  {
+    "split": "calibration",
+    "source": "src/llama-quant.cpp",
+    "line": 1365,
+    "text": "llama_model_quantize_params llama_model_quantize_default_params() {"
+  },
+  {
+    "split": "calibration",
+    "source": "common/chat-diff-analyzer.cpp",
+    "line": 1560,
+    "text": "size_t args_in_prefix = diff.prefix.find('{', func_name_in_prefix);"
+  },
+  {
+    "split": "calibration",
+    "source": "src/models/qwen35moe.cpp",
+    "line": 197,
+    "text": "if (il == n_layer - 1 && inp_out_ids && cparams.embeddings_nextn_masked) {"
+  },
+  {
+    "split": "calibration",
+    "source": "common/chat.cpp",
+    "line": 660,
+    "text": "const int res = llama_chat_apply_template(tmpl.c_str(), chat, 1, true, nullptr, 0);"
+  },
+  {
+    "split": "calibration",
+    "source": "common/chat-diff-analyzer.cpp",
+    "line": 546,
+    "text": "LOG_DBG(ANSI_ORANGE \"%s: Template application failed\\n\" ANSI_RESET , __func__);"
+  },
+  {
+    "split": "calibration",
+    "source": "src/models/kimi-k3.cpp",
+    "line": 522,
+    "text": "ggml_row_size(Qcur->type, n_embd_head_qk_nope));"
+  },
+  {
+    "split": "calibration",
+    "source": "src/models/glm-dsa.cpp",
+    "line": 394,
+    "text": "ggml_tensor * k_pe = ggml_view_3d(ctx0, kv_cmpr_pe, n_embd_head_qk_rope, 1, n_tokens,"
+  },
+  {
+    "split": "calibration",
+    "source": "src/models/qwen4exp.cpp",
+    "line": 58,
+    "text": "ml.get_key(LLM_KV_ATTENTION_INDEXER_TOP_K,      hparams.indexer_top_k);"
+  },
+  {
+    "split": "calibration",
+    "source": "src/models/gemma3n.cpp",
+    "line": 444,
+    "text": "ggml_tensor * llama_model_gemma3n::graph::altup_correct(ggml_tensor * predictions, ggml_tensor * activated, int il) {"
+  },
+  {
+    "split": "calibration",
+    "source": "common/arg.cpp",
+    "line": 2974,
+    "text": ").set_examples({LLAMA_EXAMPLE_COMMON, LLAMA_EXAMPLE_EXPORT_LORA}));"
+  },
+  {
+    "split": "calibration",
+    "source": "src/llama-model.cpp",
+    "line": 478,
+    "text": "if (ud->model->arch == LLM_ARCH_HRM_TEXT) {"
+  },
+  {
+    "split": "calibration",
+    "source": "src/llama-arch.cpp",
+    "line": 297,
+    "text": "{ LLM_KV_ATTENTION_COMPRESS_ROPE_FREQ_BASE,      \"%s.attention.compress_rope_freq_base\"      },"
+  },
+  {
+    "split": "calibration",
+    "source": "common/chat-auto-parser-generator.cpp",
+    "line": 201,
+    "text": "std::string name_field = format.name_field;"
+  },
+  {
+    "split": "calibration",
+    "source": "common/download.cpp",
+    "line": 435,
+    "text": "auto [cli, parts] = common_http_client(url);"
+  },
+  {
+    "split": "calibration",
+    "source": "common/arg.cpp",
+    "line": 2489,
+    "text": "\"compute multiple choice score over random tasks from datafile supplied with -f\","
+  },
+  {
+    "split": "calibration",
+    "source": "src/models/cohere2moe.cpp",
+    "line": 128,
+    "text": "layer.nextn.eh_proj          = create_tensor(tn(LLM_TENSOR_NEXTN_EH_PROJ,          \"weight\", i), { 2 * n_embd, n_embd }, flags);"
+  },
+  {
+    "split": "calibration",
+    "source": "common/arg.cpp",
+    "line": 1313,
+    "text": "exit(1); // for other exceptions, we exit with status code 1"
+  },
+  {
+    "split": "calibration",
+    "source": "src/models/gemma2.cpp",
+    "line": 36,
+    "text": "output_norm = create_tensor(tn(LLM_TENSOR_OUTPUT_NORM, \"weight\"), {n_embd}, 0);"
+  },
+  {
+    "split": "calibration",
+    "source": "src/llama-kv-cache-dsv4.cpp",
+    "line": 2058,
+    "text": "kv->get_lid_state()->get_state_size(), kv->get_lid()->get_size(), kv->get_lid_state()->get_n_stream(),"
+  },
+  {
+    "split": "calibration",
+    "source": "src/models/bailingmoe.cpp",
+    "line": 111,
+    "text": "Qcur, Kcur, Vcur, nullptr, nullptr, nullptr, 1.0f/sqrtf(float(n_rot)), il);"
+  },
+  {
+    "split": "calibration",
+    "source": "src/llama-sampler.cpp",
+    "line": 3070,
+    "text": "GGML_ASSERT(n_candidates == ggml_nelements(logits));"
+  },
+  {
+    "split": "calibration",
+    "source": "src/models/kimi-k3.cpp",
+    "line": 520,
+    "text": "ggml_row_size(Qcur->type, n_embd_head_k_mla),"
+  },
+  {
+    "split": "calibration",
+    "source": "src/llama-arch.cpp",
+    "line": 139,
+    "text": "{ LLM_ARCH_MINIMAX_M2,       \"minimax-m2\"       },"
+  },
+  {
+    "split": "calibration",
+    "source": "src/llama-model.cpp",
+    "line": 1135,
+    "text": "if (ggml_backend_reg_dev_get(reg, i) == dev) {"
+  },
+  {
+    "split": "calibration",
+    "source": "src/models/jina-bert-v2.cpp",
+    "line": 55,
+    "text": "layer.ffn_down   = create_tensor(tn(LLM_TENSOR_FFN_DOWN, \"weight\", i), {n_ff, n_embd}, 0);"
+  },
+  {
+    "split": "calibration",
+    "source": "src/llama-model.cpp",
+    "line": 452,
+    "text": "if (tensor_name.substr(0, 4) == \"blk.\") {"
+  },
+  {
+    "split": "calibration",
+    "source": "src/models/qwen4exp.cpp",
+    "line": 1154,
+    "text": "ggml_tensor * state = ggml_reshape_3d(ctx0, rows, state_cols, channels, n_seqs);"
+  },
+  {
+    "split": "calibration",
+    "source": "src/models/dots3note.cpp",
+    "line": 364,
+    "text": "kv_cmpr = ggml_reshape_3d(ctx0, kv_cmpr, kv_lora_rank, 1, n_tokens);"
+  },
+  {
+    "split": "calibration",
+    "source": "src/models/gemma3.cpp",
+    "line": 210,
+    "text": "if (hparams.f_final_logit_softcapping) {"
+  },
+  {
+    "split": "calibration",
+    "source": "src/models/cohere2.cpp",
+    "line": 143,
+    "text": "cur = build_norm(cur, model.output_norm, NULL, LLM_NORM, -1);"
+  },
+  {
+    "split": "calibration",
+    "source": "common/chat.cpp",
+    "line": 197,
+    "text": "if (concat_typed_text || contains_media()) {"
+  },
+  {
+    "split": "calibration",
+    "source": "src/models/rwkv7.cpp",
+    "line": 81,
+    "text": "layer.time_mix_a1 = create_tensor(tn(LLM_TENSOR_TIME_MIX_A1, \"weight\", i), {n_embd, n_lora_iclr}, 0);"
+  },
+  {
+    "split": "calibration",
+    "source": "src/llama-graph.cpp",
+    "line": 3026,
+    "text": "const auto & k_idxs = inp->get_k_idxs_mla();"
+  },
+  {
+    "split": "calibration",
+    "source": "src/llama-graph.cpp",
+    "line": 1703,
+    "text": "Kcur = build_lora_mm(layer.wk, cur, layer.wk_s);"
+  },
+  {
+    "split": "calibration",
+    "source": "src/models/baichuan.cpp",
+    "line": 22,
+    "text": "output_norm = create_tensor(tn(LLM_TENSOR_OUTPUT_NORM, \"weight\"), {n_embd}, 0);"
+  },
+  {
+    "split": "calibration",
+    "source": "common/arg.cpp",
+    "line": 4128,
+    "text": "string_format(\"number of tokens to draft for speculative decoding (default: %d)\", params.speculative.draft.n_max),"
+  },
+  {
+    "split": "calibration",
+    "source": "common/arg.cpp",
+    "line": 4098,
+    "text": "[](common_params & params, const std::string & value) {"
+  },
+  {
+    "split": "calibration",
+    "source": "common/json-schema.cpp",
+    "line": 148,
+    "text": "fail(path, \"properties must be an object\");"
+  },
+  {
+    "split": "calibration",
+    "source": "src/models/deepseek2ocr.cpp",
+    "line": 55,
+    "text": "layer.ffn_gate_inp = create_tensor(tn(LLM_TENSOR_FFN_GATE_INP, \"weight\", i), {n_embd, n_expert}, 0);"
+  },
+  {
+    "split": "calibration",
+    "source": "common/chat-diff-analyzer.cpp",
+    "line": 1553,
+    "text": "auto res = parser.parse_anywhere_and_extract(str);"
+  },
+  {
+    "split": "calibration",
+    "source": "src/llama-kv-cache.cpp",
+    "line": 695,
+    "text": "ret[buft] += ggml_backend_buffer_get_size(buf.get());"
+  },
+  {
+    "split": "calibration",
+    "source": "src/unicode.cpp",
+    "line": 1227,
+    "text": "{ \"\\\\p{Lm}\", unicode_cpt_flags::LETTER }, // Modifier letter"
+  },
+  {
+    "split": "calibration",
+    "source": "src/llama-quant.cpp",
+    "line": 376,
+    "text": "const int64_t qk_k = ggml_blck_size(target_type);"
+  },
+  {
+    "split": "calibration",
+    "source": "src/llama-kv-cache-dsv4.cpp",
+    "line": 2054,
+    "text": "plans_hca(dsv4_build_comp_plans(this->ubatches, DSV4_HCA_RATIO, false,"
+  },
+  {
+    "split": "calibration",
+    "source": "src/llama-grammar.cpp",
+    "line": 1457,
+    "text": "void llama_grammar_accept_str(struct llama_grammar & grammar, const std::string & piece) {"
+  },
+  {
+    "split": "calibration",
+    "source": "common/reasoning-budget.cpp",
+    "line": 211,
+    "text": "/* .accept            = */ common_reasoning_budget_accept,"
+  },
+  {
+    "split": "calibration",
+    "source": "src/models/openelm.cpp",
+    "line": 46,
+    "text": "std::unique_ptr<llm_graph_context> llama_model_openelm::build_arch_graph(const llm_graph_params & params) const {"
+  },
+  {
+    "split": "calibration",
+    "source": "common/llguidance.cpp",
+    "line": 61,
+    "text": "for (size_t i = 0; i < cur_p->size; ++i) {"
+  },
+  {
+    "split": "calibration",
+    "source": "src/llama-arch.cpp",
+    "line": 192,
+    "text": "{ LLM_KV_CONTEXT_LENGTH,                    \"%s.context_length\"                    },"
+  },
+  {
+    "split": "calibration",
+    "source": "src/models/deepseek4.cpp",
+    "line": 335,
+    "text": "col_sum = ggml_permute(ctx0, col_sum, 1, 0, 2, 3);"
+  },
+  {
+    "split": "calibration",
+    "source": "src/models/lfm2.cpp",
+    "line": 146,
+    "text": "q = ggml_rope_ext(ctx0, q, inp_pos, nullptr, n_rot, rope_type, n_ctx_orig, freq_base, freq_scale, ext_factor,"
+  },
+  {
+    "split": "calibration",
+    "source": "src/models/mamba-base.cpp",
+    "line": 38,
+    "text": "ggml_tensor * ssm_states_all  = mctx_cur->get_s_l(il);"
+  },
+  {
+    "split": "calibration",
+    "source": "src/llama-sampler.cpp",
+    "line": 506,
+    "text": "/* .name              = */ llama_sampler_empty_name,"
+  },
+  {
+    "split": "calibration",
+    "source": "common/chat.cpp",
+    "line": 187,
+    "text": "json common_chat_msg::to_json_oaicompat(bool concat_typed_text) const {"
+  },
+  {
+    "split": "calibration",
+    "source": "common/unicode.cpp",
+    "line": 114,
+    "text": "result.push_back(0x80 | ((cpt >> 12) & 0x3f));"
+  },
+  {
+    "split": "calibration",
+    "source": "src/models/glm-dsa.cpp",
+    "line": 449,
+    "text": "if (il == n_layer - 1 && inp_out_ids && (!cparams.embeddings_nextn || cparams.embeddings_nextn_masked)) {"
+  },
+  {
+    "split": "calibration",
+    "source": "src/llama-model-loader.cpp",
+    "line": 780,
+    "text": "case GGML_TYPE_Q1_0:    ftype = LLAMA_FTYPE_MOSTLY_Q1_0;    break;"
+  },
+  {
+    "split": "calibration",
+    "source": "src/models/rwkv7.cpp",
+    "line": 3,
+    "text": "void llama_model_rwkv7::load_arch_hparams(llama_model_loader & ml) {"
+  },
+  {
+    "split": "calibration",
+    "source": "src/models/step35.cpp",
+    "line": 440,
+    "text": "Kcur = ggml_reshape_3d(ctx0, Kcur, n_embd_head_k, n_head_kv_l, n_tokens);"
+  },
+  {
+    "split": "calibration",
+    "source": "src/models/deepseek4.cpp",
+    "line": 727,
+    "text": "q  = llama_mul_mat_hadamard(ctx0, q, k_rot);"
+  },
+  {
+    "split": "calibration",
+    "source": "src/models/cohere2moe.cpp",
+    "line": 292,
+    "text": "GGML_ASSERT(hparams.n_layer_nextn > 0 && \"COHERE2MOE MTP requires n_layer_nextn > 0\");"
+  },
+  {
+    "split": "calibration",
+    "source": "src/llama-model.cpp",
+    "line": 330,
+    "text": "return new llama_model_qwen4exp(params);"
+  },
+  {
+    "split": "calibration",
+    "source": "src/models/qwen4exp.cpp",
+    "line": 62,
+    "text": "ml.get_key_or_arr(LLM_KV_ATTENTION_COMPRESS_RATIOS, hparams.dsv4_compress_ratios, hparams.n_layer_all, false);"
+  },
+  {
+    "split": "calibration",
+    "source": "src/llama-arch.cpp",
+    "line": 250,
+    "text": "{ LLM_KV_HRM_LAYERS_PER_STACK,              \"%s.hrm.layers_per_stack\"              },"
+  },
+  {
+    "split": "calibration",
+    "source": "src/llama-sampler.cpp",
+    "line": 3736,
+    "text": "llama_token        pending_token_id;  // token ID of selected token"
+  },
+  {
+    "split": "calibration",
+    "source": "src/models/rwkv6-base.cpp",
+    "line": 146,
+    "text": "ggml_view_1d(ctx0, mctx_cur->get_s_l(il), hparams.n_embd_s() * n_seqs,"
+  },
+  {
+    "split": "calibration",
+    "source": "src/llama-graph.cpp",
+    "line": 1839,
+    "text": "ggml_tensor * gate_act = ggml_silu(ctx0, cur);"
+  },
+  {
+    "split": "calibration",
+    "source": "src/models/qwen35moe.cpp",
+    "line": 136,
+    "text": "layer.nextn.embed_tokens     = create_tensor(tn(LLM_TENSOR_NEXTN_EMBED_TOKENS,     \"weight\", il), { n_embd, n_vocab },     mtp_flags|TENSOR_NOT_REQUIRED);"
+  },
+  {
+    "split": "calibration",
+    "source": "src/llama-model.cpp",
+    "line": 1151,
+    "text": "buft_list.emplace_back(dev, ggml_backend_dev_buffer_type(dev));"
+  },
+  {
+    "split": "calibration",
+    "source": "src/llama-model-loader.cpp",
+    "line": 353,
+    "text": "const int kid = gguf_find_key(ctx, key.c_str());"
+  },
+  {
+    "split": "calibration",
+    "source": "common/reasoning-budget.cpp",
+    "line": 264,
+    "text": "const std::vector<llama_tokens> & end_seqs,"
+  },
+  {
+    "split": "calibration",
+    "source": "src/models/gemma2.cpp",
+    "line": 97,
+    "text": "ext_factor, attn_factor, beta_fast, beta_slow);"
+  },
+  {
+    "split": "calibration",
+    "source": "src/models/qwen35moe.cpp",
+    "line": 533,
+    "text": "shared_gate = ggml_sigmoid(ctx0, shared_gate);"
+  },
+  {
+    "split": "calibration",
+    "source": "common/parsers/muse-glimmer.cpp",
+    "line": 100,
+    "text": "p.tool_open(p.literal(\" to=\") + p.until(\"<|message|>\") +"
+  },
+  {
+    "split": "calibration",
+    "source": "src/llama-kv-cache-dsv4.cpp",
+    "line": 2241,
+    "text": "const llama_kv_cache_dsv4_context::comp_plan & llama_kv_cache_dsv4_context::get_lid_plan(const llama_ubatch & ubatch) const {"
+  },
+  {
+    "split": "calibration",
+    "source": "common/arg.cpp",
+    "line": 1277,
+    "text": "bool common_params_parse(int argc, char ** argv, common_params & params, llama_example ex, void(*print_usage)(int, char **)) {"
+  },
+  {
+    "split": "calibration",
+    "source": "src/llama-graph.cpp",
+    "line": 585,
+    "text": "res &= self_k_idxs_lid->ne[0] == params.ubatch.n_tokens;"
+  },
+  {
+    "split": "calibration",
+    "source": "src/models/openai-moe.cpp",
+    "line": 157,
+    "text": "if (!cparams.embeddings_nextn_masked && inp_out_ids) {"
+  },
+  {
+    "split": "calibration",
+    "source": "src/models/llada-moe.cpp",
+    "line": 110,
+    "text": "model.layers[il].wo, NULL, model.layers[il].wo_s,"
+  },
+  {
+    "split": "calibration",
+    "source": "common/peg-parser.cpp",
+    "line": 948,
+    "text": "return \"CharRepeat(\" + p.pattern + \", \" + std::to_string(p.min_count) + \", unbounded)\";"
+  },
+  {
+    "split": "calibration",
+    "source": "src/models/step35.cpp",
+    "line": 13,
+    "text": "ml.get_key(LLM_KV_EXPERT_SHARED_FEED_FORWARD_LENGTH, hparams.n_ff_shexp, false);"
+  },
+  {
+    "split": "calibration",
+    "source": "common/fit.cpp",
+    "line": 573,
+    "text": "throw common_params_fit_exception(\"llama_max_tensor_buft_overrides() == \""
+  },
+  {
+    "split": "calibration",
+    "source": "src/llama-quant.cpp",
+    "line": 1381,
+    "text": "/*.max_buf_size                =*/ LLAMA_QUANT_MAX_BUF_SIZE"
+  },
+  {
+    "split": "calibration",
+    "source": "src/llama-kv-cache-dsv4.cpp",
+    "line": 2202,
+    "text": "const llama_kv_cache_dsv4_context::comp_plan & llama_kv_cache_dsv4_context::get_lid_plan() const {"
+  },
+  {
+    "split": "calibration",
+    "source": "common/chat.cpp",
+    "line": 1189,
+    "text": "LOG_DBG(\"Using specialized template: DeepSeek V3.2/V4\\n\");"
+  },
+  {
+    "split": "calibration",
+    "source": "src/models/hy-v4.cpp",
+    "line": 455,
+    "text": "ggml_row_size(kv_cmpr_pe->type, kv_lora_rank + n_embd_head_qk_rope), 0);"
+  },
+  {
+    "split": "calibration",
+    "source": "common/jinja/caps.cpp",
+    "line": 562,
+    "text": "value effort = ctx.get_val(\"reasoning_effort\");"
+  },
+  {
+    "split": "calibration",
+    "source": "src/models/llama4.cpp",
+    "line": 97,
+    "text": "if (hparams.swa_type == LLAMA_SWA_TYPE_NONE) {"
+  },
+  {
+    "split": "calibration",
+    "source": "src/llama-sampler.cpp",
+    "line": 3194,
+    "text": "/* .free              = */ llama_sampler_penalties_free,"
+  },
+  {
+    "split": "calibration",
+    "source": "src/models/hy-v3.cpp",
+    "line": 126,
+    "text": "cur = build_norm(inpL, model.layers[il].attn_norm, nullptr, LLM_NORM_RMS, il);"
+  },
+  {
+    "split": "calibration",
+    "source": "src/models/hrm-text.cpp",
+    "line": 96,
+    "text": "int                       slot_base) const {"
+  },
+  {
+    "split": "calibration",
+    "source": "src/models/llama4.cpp",
+    "line": 36,
+    "text": "case 16:  type = LLM_TYPE_17B_16E; break;"
+  },
+  {
+    "split": "calibration",
+    "source": "src/models/kimi-k3.cpp",
+    "line": 507,
+    "text": "ggml_row_size(kv_cmpr_pe->type, kv_lora_rank + n_embd_head_qk_rope),"
+  },
+  {
+    "split": "calibration",
+    "source": "src/models/deepseek4.cpp",
+    "line": 396,
+    "text": "res->add_fused_node({LLM_FUSED_OP_DSV4_HC_COMB, *comb, il});"
+  },
+  {
+    "split": "calibration",
+    "source": "common/arg.cpp",
+    "line": 2689,
+    "text": "\"- auto: mmap, unless a device does not support it\\n\""
+  },
+  {
+    "split": "calibration",
+    "source": "src/llama-sampler.cpp",
+    "line": 3781,
+    "text": "for (size_t i = 0; i < cur_p->size; ++i) {"
+  },
+  {
+    "split": "calibration",
+    "source": "src/llama-model.cpp",
+    "line": 1680,
+    "text": "layer.ffn_gate_shexp_in_s = create_tensor(tn(LLM_TENSOR_FFN_GATE_SHEXP, \"input_scale\", i), {1}, TENSOR_NOT_REQUIRED);"
+  },
+  {
+    "split": "calibration",
+    "source": "src/llama-model-loader.cpp",
+    "line": 763,
+    "text": "case GGML_TYPE_Q2_K:    ftype = LLAMA_FTYPE_MOSTLY_Q2_K;    break;"
+  },
+  {
+    "split": "calibration",
+    "source": "src/llama-kv-cache-dsv4.cpp",
+    "line": 345,
+    "text": "const uint32_t kv_size = kv->get_size();"
+  },
+  {
+    "split": "calibration",
+    "source": "src/models/mellum.cpp",
+    "line": 49,
+    "text": "layer.ffn_gate_inp = create_tensor(tn(LLM_TENSOR_FFN_GATE_INP, \"weight\", i), {n_embd, n_expert}, 0);"
+  },
+  {
+    "split": "calibration",
+    "source": "src/llama-model.cpp",
+    "line": 2118,
+    "text": "LLAMA_LOG_INFO(\"%s: n_ff_shexp            = %d\\n\",     __func__, hparams.n_ff_shexp);"
+  },
+  {
+    "split": "calibration",
+    "source": "common/chat.cpp",
+    "line": 281,
+    "text": "if (msg_prv.content != msg_new.content) {"
+  },
+  {
+    "split": "calibration",
+    "source": "common/json.cpp",
+    "line": 294,
+    "text": "common_json       & common_json::back()        { return as_common(as_json(this).back()); }"
+  },
+  {
+    "split": "calibration",
+    "source": "src/models/deepseek32.cpp",
+    "line": 345,
+    "text": "ggml_view_2d(ctx0, kv_cmpr_pe, kv_lora_rank, n_tokens,"
+  },
+  {
+    "split": "calibration",
+    "source": "common/hf-cache.cpp",
+    "line": 331,
+    "text": "if (item[\"lfs\"].contains(\"oid\") && item[\"lfs\"][\"oid\"].is_string()) {"
+  },
+  {
+    "split": "calibration",
+    "source": "src/llama-model-loader.cpp",
+    "line": 1648,
+    "text": "uint8_t * data = (uint8_t *) mapping->addr() + weight->offs;"
+  },
+  {
+    "split": "calibration",
+    "source": "src/models/bailingmoe.cpp",
+    "line": 69,
+    "text": "ggml_tensor * inp_pos = build_inp_pos();"
+  },
+  {
+    "split": "calibration",
+    "source": "src/llama-sampler.cpp",
+    "line": 2569,
+    "text": "static const char * llama_sampler_mirostat_v2_name(const struct llama_sampler * /*smpl*/) {"
+  },
+  {
+    "split": "calibration",
+    "source": "src/llama-model.cpp",
+    "line": 878,
+    "text": "case LLM_TYPE_109M:          return \"109M\";"
+  },
+  {
+    "split": "calibration",
+    "source": "src/llama-arch.cpp",
+    "line": 647,
+    "text": "{ LLM_TENSOR_TIME_MIX_V2,                            \"blk.%d.time_mix_v2\" },"
+  },
+  {
+    "split": "calibration",
+    "source": "common/parsers/gemma4.cpp",
+    "line": 151,
+    "text": "common_chat_params common_chat_params_init_gemma4(const common_chat_template &    tmpl,"
+  },
+  {
+    "split": "calibration",
+    "source": "src/models/neo-bert.cpp",
+    "line": 43,
+    "text": "llama_model_neo_bert::graph::graph(const llama_model & model, const llm_graph_params & params) : llm_graph_context(params) {"
+  },
+  {
+    "split": "calibration",
+    "source": "src/models/llama4.cpp",
+    "line": 21,
+    "text": "hparams.rope_freq_base_train_swa  = hparams.rope_freq_base_train;"
+  },
+  {
+    "split": "calibration",
+    "source": "src/llama-kv-cache.cpp",
+    "line": 2524,
+    "text": "runs.push_back({idxs[i0], idxs[i1 - 1] + 1});"
+  },
+  {
+    "split": "calibration",
+    "source": "src/llama-memory-recurrent.cpp",
+    "line": 710,
+    "text": "[](const mem_cell & cell){ return !cell.is_empty(); });"
+  },
+  {
+    "split": "calibration",
+    "source": "src/llama-grammar.cpp",
+    "line": 416,
+    "text": "uint32_t llama_grammar_parser::get_symbol_id(const char * src, size_t len) {"
+  },
+  {
+    "split": "calibration",
+    "source": "common/chat-peg-parser.cpp",
+    "line": 420,
+    "text": "value_to_add += normalize_container_value(value_content);"
+  },
+  {
+    "split": "calibration",
+    "source": "src/models/hy-v4.cpp",
+    "line": 366,
+    "text": "ggml_tensor * ik = ggml_mul_mat(ctx0, layer.indexer_attn_k, cur);"
+  },
+  {
+    "split": "calibration",
+    "source": "src/llama.cpp",
+    "line": 485,
+    "text": "return llama_model_load_from_file_impl(nullptr, nullptr, nullptr, splits.front(), splits, /*file*/ nullptr, params);"
+  },
+  {
+    "split": "calibration",
+    "source": "src/models/qwen3next.cpp",
+    "line": 272,
+    "text": "Qcur = build_norm(Qcur, model.layers[il].attn_q_norm, nullptr, LLM_NORM_RMS, il);"
+  },
+  {
+    "split": "calibration",
+    "source": "src/llama-memory-recurrent.cpp",
+    "line": 1079,
+    "text": "for (uint32_t i = 0; i < cell_count; ++i) {"
+  },
+  {
+    "split": "calibration",
+    "source": "src/llama-model.cpp",
+    "line": 1319,
+    "text": "std::fill(hparams.xielu_alpha_n.begin(), hparams.xielu_alpha_n.end(), 0.0f);"
+  },
+  {
+    "split": "calibration",
+    "source": "src/models/bailingmoe2.cpp",
+    "line": 183,
+    "text": "cur = ggml_add(ctx0, moe_out, ffn_shexp);"
+  },
+  {
+    "split": "calibration",
+    "source": "src/models/deepseek4.cpp",
+    "line": 943,
+    "text": "ggml_tensor * hca_source_kv   = nullptr;"
+  },
+  {
+    "split": "calibration",
+    "source": "src/models/gemma3.cpp",
+    "line": 65,
+    "text": "layer.ffn_norm = create_tensor(tn(LLM_TENSOR_FFN_NORM, \"weight\", i), {n_embd}, 0);"
+  },
+  {
+    "split": "calibration",
+    "source": "src/llama-memory-hybrid-iswa.cpp",
+    "line": 111,
+    "text": "auto sinfos_base = mem_attn->get_base()->prepare(ubatches);"
+  },
+  {
+    "split": "calibration",
+    "source": "src/models/gemma-embedding.cpp",
+    "line": 55,
+    "text": "layer.wo = create_tensor(tn(LLM_TENSOR_ATTN_OUT, \"weight\", i), {n_embd_head_k * n_head, n_embd}, 0);"
+  },
+  {
+    "split": "calibration",
+    "source": "src/models/deepseek2.cpp",
+    "line": 244,
+    "text": "ggml_tensor * inp_out_ids = build_inp_out_ids();"
+  },
+  {
+    "split": "calibration",
+    "source": "src/llama-arch.cpp",
+    "line": 347,
+    "text": "{ LLM_KV_SSM_DT_B_C_RMS,     \"%s.ssm.dt_b_c_rms\"     },"
+  },
+  {
+    "split": "calibration",
+    "source": "src/models/deepseek.cpp",
+    "line": 188,
+    "text": "cur = build_lora_mm(model.output, cur, model.output_s);"
+  },
+  {
+    "split": "calibration",
+    "source": "src/models/qwen3next.cpp",
+    "line": 314,
+    "text": "std::pair<ggml_tensor *, ggml_tensor *> llama_model_qwen3next::graph::build_qkvz("
+  },
+  {
+    "split": "calibration",
+    "source": "src/models/jais2.cpp",
+    "line": 38,
+    "text": "layer.ffn_norm_b = create_tensor(tn(LLM_TENSOR_FFN_NORM, \"bias\", i),   {n_embd}, 0);"
+  },
+  {
+    "split": "calibration",
+    "source": "src/llama-model.cpp",
+    "line": 2421,
+    "text": "[&](uint32_t il) { return il >= hparams.n_layer(); };"
+  },
+  {
+    "split": "calibration",
+    "source": "common/parsers/gpt-oss.cpp",
+    "line": 111,
+    "text": "std::string  name     = function.at(\"name\");"
+  },
+  {
+    "split": "calibration",
+    "source": "common/peg-parser.cpp",
+    "line": 641,
+    "text": "return common_peg_parse_result(COMMON_PEG_PARSE_RESULT_FAIL, start_pos);"
+  },
+  {
+    "split": "calibration",
+    "source": "src/models/granite-hybrid.cpp",
+    "line": 106,
+    "text": "layer.rope_freqs = create_tensor(tn(LLM_TENSOR_ROPE_FREQS, \"weight\", i), {n_rot/2}, TENSOR_NOT_REQUIRED | (i != 0 ? TENSOR_DUPLICATED : 0));"
+  },
+  {
+    "split": "calibration",
+    "source": "src/models/smollm3.cpp",
+    "line": 93,
+    "text": "ext_factor, attn_factor, beta_fast, beta_slow"
+  },
+  {
+    "split": "calibration",
+    "source": "src/llama-model.cpp",
+    "line": 1272,
+    "text": "std::fill(hparams.n_expert_used_arr.begin(), hparams.n_expert_used_arr.end(), 0);"
+  },
+  {
+    "split": "calibration",
+    "source": "common/chat-diff-analyzer.cpp",
+    "line": 1515,
+    "text": "if (diff.left.empty() && diff.right.empty()) {"
+  },
+  {
+    "split": "calibration",
+    "source": "common/chat-diff-analyzer.cpp",
+    "line": 364,
+    "text": "tmpl, params, [&](template_params & p) {"
+  },
+  {
+    "split": "calibration",
+    "source": "src/models/dream.cpp",
+    "line": 29,
+    "text": "output = create_tensor(tn(LLM_TENSOR_TOKEN_EMBD, \"weight\"), {n_embd, n_vocab}, TENSOR_DUPLICATED);"
+  },
+  {
+    "split": "calibration",
+    "source": "src/llama-kv-cache-iswa.cpp",
+    "line": 343,
+    "text": "llama_memory_status llama_kv_cache_iswa_context::get_status() const {"
+  },
+  {
+    "split": "calibration",
+    "source": "src/models/qwen35moe.cpp",
+    "line": 576,
+    "text": "inp->embd = ggml_new_tensor_2d(ctx0, GGML_TYPE_F32, hparams.n_embd_inp(), n_tokens);"
+  },
+  {
+    "split": "calibration",
+    "source": "src/models/deepseek4.cpp",
+    "line": 1096,
+    "text": "ggml_build_forward_expand(gf, lid_state_kv);"
+  },
+  {
+    "split": "calibration",
+    "source": "src/llama-model.cpp",
+    "line": 1615,
+    "text": "if (!layer.ffn_down_exps_s && layer.ffn_down_exps) {"
+  },
+  {
+    "split": "calibration",
+    "source": "src/unicode.cpp",
+    "line": 311,
+    "text": "if (num_whitespaces > 1 && _get_cpt(pos+num_whitespaces) != OUT_OF_RANGE) {"
+  },
+  {
+    "split": "calibration",
+    "source": "common/peg-parser.cpp",
+    "line": 1785,
+    "text": "builder.add_rule(\"root\", string_join(trigger_names, \" | \"));"
+  },
+  {
+    "split": "calibration",
+    "source": "src/models/qwen4exp.cpp",
+    "line": 76,
+    "text": "ml.llm_kv(LLM_KV_PLE_LAYERS).c_str(), n_ple));"
+  },
+  {
+    "split": "calibration",
+    "source": "src/llama-model.cpp",
+    "line": 202,
+    "text": "return new llama_model_dots3note(params);"
+  },
+  {
+    "split": "calibration",
+    "source": "src/llama-sampler.cpp",
+    "line": 3925,
+    "text": "for (size_t i = 0; i < cur_p->size; ++i) {"
+  },
+  {
+    "split": "calibration",
+    "source": "src/models/minimax-m3.cpp",
+    "line": 255,
+    "text": "const int64_t Hd  = hparams.indexer_n_head;   // one indexer head per GQA group"
+  },
+  {
+    "split": "calibration",
+    "source": "common/parsers/minicpm5.cpp",
+    "line": 125,
+    "text": "{ COMMON_GRAMMAR_TRIGGER_TYPE_WORD, \"<function\" },"
+  },
+  {
+    "split": "calibration",
+    "source": "src/llama-grammar.cpp",
+    "line": 733,
+    "text": "print_rule(file, uint32_t(i), rules[i], symbol_id_names);"
+  },
+  {
+    "split": "calibration",
+    "source": "src/models/phimoe.cpp",
+    "line": 49,
+    "text": "if (hparams.swa_type != LLAMA_SWA_TYPE_NONE) {"
+  },
+  {
+    "split": "calibration",
+    "source": "src/models/openelm.cpp",
+    "line": 50,
+    "text": "llama_model_openelm::graph::graph(const llama_model & model, const llm_graph_params & params) : llm_graph_context(params) {"
+  },
+  {
+    "split": "calibration",
+    "source": "src/models/stablelm.cpp",
+    "line": 3,
+    "text": "void llama_model_stablelm::load_arch_hparams(llama_model_loader & ml) {"
+  },
+  {
+    "split": "calibration",
+    "source": "src/unicode.cpp",
+    "line": 1141,
+    "text": "result.emplace_back(0xFFFD); // replacement character"
+  },
+  {
+    "split": "calibration",
+    "source": "src/llama-graph.cpp",
+    "line": 1728,
+    "text": "Vcur = ggml_clamp(ctx0, Vcur, -hparams.f_clamp_kqv, hparams.f_clamp_kqv);"
+  },
+  {
+    "split": "calibration",
+    "source": "src/models/bailingmoe2.cpp",
+    "line": 14,
+    "text": "case 20: type = LLM_TYPE_16B_A1B; break;"
+  },
+  {
+    "split": "calibration",
+    "source": "src/llama-memory-recurrent.cpp",
+    "line": 368,
+    "text": "const int32_t tail_id = cells[seq_id].tail;"
+  },
+  {
+    "split": "calibration",
+    "source": "src/unicode.cpp",
+    "line": 1096,
+    "text": "result.push_back(0xc0 | ((cpt >> 6) & 0x1f));"
+  },
+  {
+    "split": "calibration",
+    "source": "src/unicode.cpp",
+    "line": 669,
+    "text": "while (_get_flags(pos).is_letter || _get_flags(pos).is_accent_mark) {"
+  },
+  {
+    "split": "calibration",
+    "source": "src/llama-kv-cache-iswa.cpp",
+    "line": 117,
+    "text": "res = res & kv_swa ->seq_rm(seq_id, p0, p1);"
+  },
+  {
+    "split": "calibration",
+    "source": "src/models/granite-hybrid.cpp",
+    "line": 3,
+    "text": "void llama_model_granite_hybrid::load_arch_hparams(llama_model_loader & ml) {"
+  },
+  {
+    "split": "calibration",
+    "source": "src/models/dots3note.cpp",
+    "line": 261,
+    "text": "res->add_fused_node({LLM_FUSED_OP_LIGHTNING_INDEXER, indexer_score, il});"
+  },
+  {
+    "split": "calibration",
+    "source": "src/llama-kv-cache.cpp",
+    "line": 159,
+    "text": "LLAMA_LOG_WARN(\"%s: the V embeddings have different sizes across layers and FA is not enabled - padding V cache to %d\\n\","
+  },
+  {
+    "split": "calibration",
+    "source": "src/llama-model-loader.cpp",
+    "line": 864,
+    "text": "struct ggml_tensor * llama_model_loader::get_tensor_meta(const char * name) const {"
+  },
+  {
+    "split": "calibration",
+    "source": "src/llama-arch.cpp",
+    "line": 682,
+    "text": "{ LLM_TENSOR_INDEXER_PROJ,                           \"blk.%d.indexer.proj\" },"
+  },
+  {
+    "split": "calibration",
+    "source": "src/llama-model.cpp",
+    "line": 1957,
+    "text": "const std::string rope_scaling_type = llama_rope_scaling_type_name(hparams.rope_scaling_type_train);"
+  },
+  {
+    "split": "calibration",
+    "source": "src/llama-graph.cpp",
+    "line": 2047,
+    "text": "probs = ggml_sigmoid(ctx0, logits); // [n_expert, n_tokens]"
+  },
+  {
+    "split": "calibration",
+    "source": "src/llama-model.cpp",
+    "line": 2638,
+    "text": "/* attn_v_trans      */ !cparams.flash_attn,"
+  },
+  {
+    "split": "calibration",
+    "source": "src/llama-graph.cpp",
+    "line": 2294,
+    "text": "GGML_ABORT(\"fatal error: gated squared relu not implemented\");"
+  },
+  {
+    "split": "calibration",
+    "source": "src/llama-memory-hybrid-iswa.cpp",
+    "line": 114,
+    "text": "return std::make_unique<llama_memory_hybrid_iswa_context>(LLAMA_MEMORY_STATUS_FAILED_PREPARE);"
+  },
+  {
+    "split": "calibration",
+    "source": "common/download.cpp",
+    "line": 782,
+    "text": "plan.mmproj = find_best_mmproj(all, primary.path);"
+  },
+  {
+    "split": "calibration",
+    "source": "src/llama-kv-cache-dsv4.cpp",
+    "line": 140,
+    "text": "for (uint32_t p = 0; p < ubatch.n_pos; ++p) {"
+  },
+  {
+    "split": "calibration",
+    "source": "src/models/neo-bert.cpp",
+    "line": 58,
+    "text": "ggml_tensor * inp_out_ids = build_inp_out_ids();"
+  },
+  {
+    "split": "calibration",
+    "source": "src/models/dots3note.cpp",
+    "line": 18,
+    "text": "ml.get_key(LLM_KV_EXPERT_GATING_FUNC,         hparams.expert_gating_func);"
+  },
+  {
+    "split": "calibration",
+    "source": "src/models/hy-v4.cpp",
+    "line": 373,
+    "text": "freq_scale, ext_factor, attn_factor, beta_fast, beta_slow);"
+  },
+  {
+    "split": "calibration",
+    "source": "src/models/pangu-embed.cpp",
+    "line": 128,
+    "text": "model.layers[il].ffn_down, model.layers[il].ffn_down_b, NULL,"
+  },
+  {
+    "split": "calibration",
+    "source": "src/models/gemma2.cpp",
+    "line": 15,
+    "text": "ml.get_key(LLM_KV_FINAL_LOGIT_SOFTCAPPING,     hparams.f_final_logit_softcapping, false);"
+  },
+  {
+    "split": "calibration",
+    "source": "src/llama-graph.cpp",
+    "line": 1455,
+    "text": "llm_graph_context::llm_graph_context(const llm_graph_params & params) :"
+  },
+  {
+    "split": "calibration",
+    "source": "common/ngram-cache.cpp",
+    "line": 222,
+    "text": "common_ngram_cache common_ngram_cache_load(const std::string & filename) {"
+  },
+  {
+    "split": "calibration",
+    "source": "src/llama-model.cpp",
+    "line": 576,
+    "text": "return get_tensor_config_impl(GGML_BACKEND_SPLIT_AXIS_1, \"ffn_down.weight\", \"ffn_down_exps.weight\");"
+  },
+  {
+    "split": "calibration",
+    "source": "common/sampling.cpp",
+    "line": 906,
+    "text": "std::vector<common_sampler_type> samplers;"
+  },
+  {
+    "split": "calibration",
+    "source": "common/parsers/ling3.cpp",
+    "line": 118,
+    "text": "std::vector<common_peg_parser> optional_args;"
+  },
+  {
+    "split": "calibration",
+    "source": "common/chat-auto-parser-generator.cpp",
+    "line": 346,
+    "text": "tool_calls = p.trigger_rule(\"tool-call\", format.section_start + tool_choice + format.section_end);"
+  },
+  {
+    "split": "calibration",
+    "source": "src/llama-memory-hybrid.cpp",
+    "line": 154,
+    "text": "mem_recr->seq_cp(seq_id_src, seq_id_dst, p0, p1);"
+  },
+  {
+    "split": "calibration",
+    "source": "common/peg-parser.cpp",
+    "line": 1693,
+    "text": "if (p.min_count == 1 && p.max_count == -1) {"
+  },
+  {
+    "split": "calibration",
+    "source": "src/models/qwen3next.cpp",
+    "line": 490,
+    "text": "ggml_tensor * k_conv = ggml_view_4d(ctx0, conv_qkv_mix, head_k_dim, num_k_heads, n_seq_tokens, n_seqs,"
+  },
+  {
+    "split": "calibration",
+    "source": "src/models/gemma3n.cpp",
+    "line": 43,
+    "text": "output_norm = create_tensor(tn(LLM_TENSOR_OUTPUT_NORM, \"weight\"), {n_embd}, 0);"
+  },
+  {
+    "split": "calibration",
+    "source": "src/models/bailingmoe2.cpp",
+    "line": 65,
+    "text": "layer.ffn_down_shexp = create_tensor(tn(LLM_TENSOR_FFN_DOWN_SHEXP, \"weight\", i), {n_ff_shexp, n_embd}, flags);"
+  },
+  {
+    "split": "calibration",
+    "source": "src/llama-arch.cpp",
+    "line": 894,
+    "text": "{LLM_TENSOR_ATTN_SUB_NORM,              {LLM_TENSOR_LAYER_REPEATING, GGML_OP_MUL}},"
+  },
+  {
+    "split": "calibration",
+    "source": "src/models/nanbeige.cpp",
+    "line": 180,
+    "text": "cur = build_lora_mm(model.output, cur, model.output_s);"
+  },
+  {
+    "split": "calibration",
+    "source": "src/models/step35.cpp",
+    "line": 550,
+    "text": "cur = build_norm(cur, head_norm_w, nullptr, LLM_NORM_RMS, -1);"
+  },
+  {
+    "split": "calibration",
+    "source": "src/llama-batch.cpp",
+    "line": 793,
+    "text": "for (int s = 0; s < udata->n_seq_id[i]; ++s) {"
+  },
+  {
+    "split": "calibration",
+    "source": "common/arg.cpp",
+    "line": 1398,
+    "text": "params.sampling.temp = 0.2; // lower temp by default for better quality"
+  },
+  {
+    "split": "calibration",
+    "source": "src/llama-model-saver.cpp",
+    "line": 105,
+    "text": "gguf_set_arr_data(gguf_ctx, llm_kv(key).c_str(), GGUF_TYPE_BOOL, value.data(), n_values);"
+  },
+  {
+    "split": "calibration",
+    "source": "common/arg.cpp",
+    "line": 3896,
+    "text": "\"'auto' enables colors when output is to a terminal\","
+  },
+  {
+    "split": "calibration",
+    "source": "src/models/hy-v3.cpp",
+    "line": 7,
+    "text": "ml.get_key(LLM_KV_EXPERT_GATING_FUNC,                hparams.expert_gating_func, false);"
+  },
+  {
+    "split": "calibration",
+    "source": "src/llama-sampler.cpp",
+    "line": 3053,
+    "text": "ggml_set_name(sctx->inp_counts, \"penalties_counts\");"
+  },
+  {
+    "split": "calibration",
+    "source": "src/llama-sampler.cpp",
+    "line": 3278,
+    "text": "return llama_sampler_init_top_n_sigma(ctx->n);"
+  },
+  {
+    "split": "calibration",
+    "source": "src/llama-memory-recurrent.cpp",
+    "line": 944,
+    "text": "const int32_t s_type_i = (int32_t)s_l[il]->type;"
+  },
+  {
+    "split": "calibration",
+    "source": "src/models/lfm2moe.cpp",
+    "line": 51,
+    "text": "layer.ffn_down = create_tensor(tn(LLM_TENSOR_FFN_DOWN, \"weight\", i), {  n_ff, n_embd}, 0);"
+  },
+  {
+    "split": "calibration",
+    "source": "common/parsers/gemma4.cpp",
+    "line": 171,
+    "text": "data.format            = COMMON_CHAT_FORMAT_PEG_GEMMA4;"
+  },
+  {
+    "split": "calibration",
+    "source": "src/llama-arch.cpp",
+    "line": 269,
+    "text": "{ LLM_KV_ATTENTION_ICLR_LORA_RANK,               \"%s.attention.iclr_lora_rank\"               },"
+  },
+  {
+    "split": "calibration",
+    "source": "src/llama-graph.cpp",
+    "line": 1218,
+    "text": "attn_ctx->get_swa()->set_input_v_rot(inp_attn->self_v_rot_swa);"
+  },
+  {
+    "split": "calibration",
+    "source": "src/llama-arch.cpp",
+    "line": 435,
+    "text": "{ LLM_TENSOR_OUTPUT_NORM,                            \"output_norm\" },"
+  },
+  {
+    "split": "calibration",
+    "source": "src/llama-sampler.cpp",
+    "line": 3540,
+    "text": "int repeat_len = ctx->dry_repeat_count[i];"
+  },
+  {
+    "split": "calibration",
+    "source": "src/llama-kv-cache-dsv4.cpp",
+    "line": 1178,
+    "text": "return ggml_view_2d(ctx, state, state->ne[0], get_n_rows(), state->nb[1], 0*row_size);"
+  },
+  {
+    "split": "calibration",
+    "source": "src/llama-graph.cpp",
+    "line": 3357,
+    "text": "GGML_ASSERT(hparams.swa_type == LLAMA_SWA_TYPE_NONE && \"Use llama_kv_cache_iswa for SWA\");"
+  },
+  {
+    "split": "calibration",
+    "source": "src/models/exaone.cpp",
+    "line": 3,
+    "text": "void llama_model_exaone::load_arch_hparams(llama_model_loader & ml) {"
+  },
+  {
+    "split": "calibration",
+    "source": "src/models/gemma4-assistant.cpp",
+    "line": 137,
+    "text": "ggml_tensor * cur_norm = build_norm(inpL, model.layers[il].attn_norm, nullptr, LLM_NORM_RMS, il);"
+  },
+  {
+    "split": "calibration",
+    "source": "src/models/starcoder2.cpp",
+    "line": 25,
+    "text": "output = create_tensor(tn(LLM_TENSOR_OUTPUT, \"weight\"), {n_embd, n_vocab}, TENSOR_NOT_REQUIRED);"
+  },
+  {
+    "split": "alignment_holdout",
+    "source": "src/llama-context.cpp",
+    "line": 3975,
+    "text": "float * llama_get_sampled_logits_ith(llama_context * ctx, int32_t i) {"
+  },
+  {
+    "split": "alignment_holdout",
+    "source": "src/models/llama.cpp",
+    "line": 5,
+    "text": "ml.get_key(LLM_KV_VOCAB_SIZE, n_vocab, false) || ml.get_arr_n(LLM_KV_TOKENIZER_LIST, n_vocab, false);"
+  },
+  {
+    "split": "alignment_holdout",
+    "source": "src/models/qwen2vl.cpp",
+    "line": 32,
+    "text": "layer.ffn_gate = create_tensor(tn(LLM_TENSOR_FFN_GATE, \"weight\", i), {n_embd,   n_ff}, 0);"
+  },
+  {
+    "split": "alignment_holdout",
+    "source": "src/models/dflash.cpp",
+    "line": 471,
+    "text": "GGML_ASSERT(n_blocks > 0 && n_tokens % n_blocks == 0);"
+  },
+  {
+    "split": "alignment_holdout",
+    "source": "common/jinja/value.cpp",
+    "line": 343,
+    "text": "value val_check = args.get_kwarg_or_pos(\"boolean\", 2);"
+  },
+  {
+    "split": "alignment_holdout",
+    "source": "src/models/laguna.cpp",
+    "line": 179,
+    "text": "const int   n_rot_l       = is_swa_il ? hparams.n_rot_swa : n_rot;"
+  },
+  {
+    "split": "alignment_holdout",
+    "source": "src/models/dflash.cpp",
+    "line": 611,
+    "text": "ggml_tensor * Vcur = build_lora_mm(layer.wv, inp_g, layer.wv_s);"
+  },
+  {
+    "split": "alignment_holdout",
+    "source": "src/llama-vocab.cpp",
+    "line": 3498,
+    "text": "if (fragment.type == FRAGMENT_BUFFER_VARIANT_TYPE_RAW_TEXT) {"
+  },
+  {
+    "split": "alignment_holdout",
+    "source": "src/llama-mmap.cpp",
+    "line": 140,
+    "text": "throw std::runtime_error(\"unexpectedly reached end of file\");"
+  },
+  {
+    "split": "alignment_holdout",
+    "source": "common/speculative.cpp",
+    "line": 97,
+    "text": "llama_vocab_eos(vocab_tgt), llama_vocab_eos(vocab_dft));"
+  },
+  {
+    "split": "alignment_holdout",
+    "source": "src/models/t5.cpp",
+    "line": 131,
+    "text": "const int64_t dec_n_layer = hparams.dec_n_layer;"
+  },
+  {
+    "split": "alignment_holdout",
+    "source": "src/llama-vocab.cpp",
+    "line": 2872,
+    "text": "special_eog_ids.insert(special_fim_pad_id);"
+  },
+  {
+    "split": "alignment_holdout",
+    "source": "common/jinja/value.cpp",
+    "line": 792,
+    "text": "const int base = val_base->is_undefined() ? 10 : val_base->as_int();"
+  },
+  {
+    "split": "alignment_holdout",
+    "source": "src/models/llada.cpp",
+    "line": 117,
+    "text": "ggml_tensor * ffn_inp = ggml_add(ctx0, cur, inpSA);"
+  },
+  {
+    "split": "alignment_holdout",
+    "source": "common/speculative.cpp",
+    "line": 1299,
+    "text": "const auto * cur_p = common_sampler_get_candidates(smpl, true);"
+  },
+  {
+    "split": "alignment_holdout",
+    "source": "common/preset.cpp",
+    "line": 170,
+    "text": "static std::map<std::string, std::map<std::string, std::string>> parse_ini_from_file(const std::string & path) {"
+  },
+  {
+    "split": "alignment_holdout",
+    "source": "src/models/hunyuan-vl.cpp",
+    "line": 45,
+    "text": "layer.attn_q_norm = create_tensor(tn(LLM_TENSOR_ATTN_Q_NORM, \"weight\", i), {n_embd_head_k}, 0);"
+  },
+  {
+    "split": "alignment_holdout",
+    "source": "src/models/dflash.cpp",
+    "line": 314,
+    "text": "ggml_tensor * prev = ggml_view_2d(ctx0, tokens, 1, n_blocks, token_stride, 0);"
+  },
+  {
+    "split": "alignment_holdout",
+    "source": "src/models/kimi-linear.cpp",
+    "line": 299,
+    "text": "ggml_tensor * q_w = layer.wq, * k_w = layer.wk, * v_w = layer.wv;"
+  },
+  {
+    "split": "alignment_holdout",
+    "source": "src/llama-context.cpp",
+    "line": 605,
+    "text": "gf_res_reserve.reset(new llm_graph_result(max_nodes));"
+  },
+  {
+    "split": "alignment_holdout",
+    "source": "src/models/kimi-linear.cpp",
+    "line": 260,
+    "text": "const int64_t n_seq_tokens = ubatch.n_seq_tokens;"
+  },
+  {
+    "split": "alignment_holdout",
+    "source": "common/parsers/minimax-m3.cpp",
+    "line": 219,
+    "text": "data.grammar      = build_grammar([&](const common_grammar_builder & builder) {"
+  },
+  {
+    "split": "alignment_holdout",
+    "source": "src/llama-mmap.cpp",
+    "line": 766,
+    "text": "LLAMA_LOG_WARN(\"warning: failed to VirtualUnlock buffer: %s\\n\","
+  },
+  {
+    "split": "alignment_holdout",
+    "source": "src/models/laguna.cpp",
+    "line": 166,
+    "text": "llm_graph_input_attn_kv      * inp_attn_kv   = has_swa ? nullptr : build_attn_inp_kv();"
+  },
+  {
+    "split": "alignment_holdout",
+    "source": "src/llama-vocab.cpp",
+    "line": 730,
+    "text": "if (token_multibyte != LLAMA_TOKEN_NULL) {"
+  },
+  {
+    "split": "alignment_holdout",
+    "source": "src/models/starcoder.cpp",
+    "line": 61,
+    "text": "const int64_t n_embd_head = hparams.n_embd_head_v();"
+  },
+  {
+    "split": "alignment_holdout",
+    "source": "src/llama-chat.cpp",
+    "line": 258,
+    "text": "} else if (tmpl == LLM_CHAT_TEMPLATE_MISTRAL_V7 || tmpl == LLM_CHAT_TEMPLATE_MISTRAL_V7_TEKKEN) {"
+  },
+  {
+    "split": "alignment_holdout",
+    "source": "src/models/maple.cpp",
+    "line": 54,
+    "text": "layer.ffn_gate_inp  = create_tensor(tn(LLM_TENSOR_FFN_GATE_INP,  \"weight\", i), {n_embd, n_expert}, 0);"
+  },
+  {
+    "split": "alignment_holdout",
+    "source": "src/llama-vocab.cpp",
+    "line": 355,
+    "text": "\"'s|'t|'re|'ve|'m|'ll|'d| ?\\\\p{L}+| ?\\\\p{N}+| ?[^\\\\s\\\\p{L}\\\\p{N}]+|\\\\s+(?!\\\\S)\","
+  },
+  {
+    "split": "alignment_holdout",
+    "source": "src/llama-chat.cpp",
+    "line": 96,
+    "text": "auto tmpl_contains = [&tmpl](const char * haystack) -> bool {"
+  },
+  {
+    "split": "alignment_holdout",
+    "source": "src/models/eagle3.cpp",
+    "line": 233,
+    "text": "Qcur = ggml_reshape_3d(ctx0, Qcur, n_embd_head, n_head,    n_tokens);"
+  },
+  {
+    "split": "alignment_holdout",
+    "source": "src/models/glm4.cpp",
+    "line": 174,
+    "text": "cur = build_norm(inpL, model.output_norm, NULL, LLM_NORM_RMS, -1);"
+  },
+  {
+    "split": "alignment_holdout",
+    "source": "common/common.cpp",
+    "line": 617,
+    "text": "std::string string_from(const struct llama_context * ctx, const struct llama_batch & batch) {"
+  },
+  {
+    "split": "alignment_holdout",
+    "source": "src/models/llama.cpp",
+    "line": 80,
+    "text": "layer.ffn_gate_exps = create_tensor(tn(LLM_TENSOR_FFN_GATE_EXPS, \"weight\", i), {n_embd,   n_ff, n_expert}, TENSOR_NOT_REQUIRED);"
+  },
+  {
+    "split": "alignment_holdout",
+    "source": "common/parsers/minimax-m3.cpp",
+    "line": 90,
+    "text": "std::string  name     = function.at(\"name\");"
+  },
+  {
+    "split": "alignment_holdout",
+    "source": "src/models/kimi-linear.cpp",
+    "line": 467,
+    "text": "ggml_row_size(kv->type, n_embd_head_qk_nope));"
+  },
+  {
+    "split": "alignment_holdout",
+    "source": "common/common.cpp",
+    "line": 1736,
+    "text": "cparams.yarn_attn_factor  = params.yarn_attn_factor;"
+  },
+  {
+    "split": "alignment_holdout",
+    "source": "src/models/laguna.cpp",
+    "line": 97,
+    "text": "layer.attn_k_norm = create_tensor(tn(LLM_TENSOR_ATTN_K_NORM, \"weight\", i), {n_embd_head_k}, 0);"
+  },
+  {
+    "split": "alignment_holdout",
+    "source": "src/llama-chat.cpp",
+    "line": 711,
+    "text": "for (size_t i = 0; i < chat.size(); i++) {"
+  },
+  {
+    "split": "alignment_holdout",
+    "source": "common/json-schema-to-grammar.cpp",
+    "line": 630,
+    "text": "return _add_rule(name, \"\\\"\\\\\\\"\\\" (\" + rule + \") \\\"\\\\\\\"\\\"\");"
+  },
+  {
+    "split": "alignment_holdout",
+    "source": "src/llama-mmap.cpp",
+    "line": 743,
+    "text": "len, size, llama_format_win_err(GetLastError()).c_str());"
+  },
+  {
+    "split": "alignment_holdout",
+    "source": "src/models/dflash.cpp",
+    "line": 355,
+    "text": "ggml_tensor * feat = ggml_concat(ctx0, ggml_cont(ctx0, conf_inp_i), w1_prev, 0);"
+  },
+  {
+    "split": "alignment_holdout",
+    "source": "common/parsers/minimax-m3.cpp",
+    "line": 98,
+    "text": "auto element_of = [&](const std::string & tag, const common_chat_schema & schema, const std::string & rule_name) {"
+  },
+  {
+    "split": "alignment_holdout",
+    "source": "src/models/maple.cpp",
+    "line": 62,
+    "text": "return std::make_unique<graph>(*this, params);"
+  },
+  {
+    "split": "alignment_holdout",
+    "source": "src/models/rnd1.cpp",
+    "line": 56,
+    "text": "layer.ffn_up_exps   = create_tensor(tn(LLM_TENSOR_FFN_UP_EXPS,   \"weight\", i), {  n_embd, n_ff_exp, n_expert}, 0);"
+  },
+  {
+    "split": "alignment_holdout",
+    "source": "src/models/cogvlm.cpp",
+    "line": 116,
+    "text": "Kcur = ggml_rope(ctx0, Kcur, inp_pos, n_embd_head, rope_type);"
+  },
+  {
+    "split": "alignment_holdout",
+    "source": "common/common.cpp",
+    "line": 1451,
+    "text": "COM_ERR(\"failed to create context with model '%s'\\n\", params.model.path.c_str());"
+  },
+  {
+    "split": "alignment_holdout",
+    "source": "src/llama-vocab.cpp",
+    "line": 2834,
+    "text": "attr = (llama_token_attr) (attr | LLAMA_TOKEN_ATTR_CONTROL);"
+  },
+  {
+    "split": "alignment_holdout",
+    "source": "src/models/dflash.cpp",
+    "line": 763,
+    "text": "GGML_ASSERT(model_other->output != nullptr && \"DFlash decoder requires the target model's output projection\");"
+  },
+  {
+    "split": "alignment_holdout",
+    "source": "src/models/gpt2.cpp",
+    "line": 55,
+    "text": "return std::make_unique<graph>(*this, params);"
+  },
+  {
+    "split": "alignment_holdout",
+    "source": "src/models/glm4.cpp",
+    "line": 133,
+    "text": "Qcur, Kcur, Vcur, nullptr, nullptr, nullptr, 1.0f / sqrtf(float(n_embd_head)), il);"
+  },
+  {
+    "split": "alignment_holdout",
+    "source": "src/llama-vocab.cpp",
+    "line": 2535,
+    "text": "default:                            token_data.attr = LLAMA_TOKEN_ATTR_UNDEFINED;    break;"
+  },
+  {
+    "split": "alignment_holdout",
+    "source": "src/models/dflash.cpp",
+    "line": 330,
+    "text": "for (int64_t i = i_draft_beg; i < block_drafts; ++i) {"
+  },
+  {
+    "split": "alignment_holdout",
+    "source": "src/models/laguna.cpp",
+    "line": 21,
+    "text": "ml.get_key(LLM_KV_EXPERT_SHARED_COUNT,               hparams.n_expert_shared, false);"
+  },
+  {
+    "split": "alignment_holdout",
+    "source": "src/llama-context.cpp",
+    "line": 647,
+    "text": "throw std::runtime_error(\"failed to allocate compute pp buffers\");"
+  },
+  {
+    "split": "alignment_holdout",
+    "source": "src/llama-context.cpp",
+    "line": 3015,
+    "text": "for (size_t i = src_j; i < mbuf_cur.cpy.size(); ++i) {"
+  },
+  {
+    "split": "alignment_holdout",
+    "source": "src/llama-mmap.cpp",
+    "line": 126,
+    "text": "throw std::runtime_error(format(\"read error: %s\", GetErrorMessageWin32(GetLastError()).c_str()));"
+  },
+  {
+    "split": "alignment_holdout",
+    "source": "common/json-schema-to-grammar.cpp",
+    "line": 244,
+    "text": "{\"array\", {\"\\\"[\\\" space ( value (\\\",\\\" space value)* )? space \\\"]\\\"\", {\"value\"}}},"
+  },
+  {
+    "split": "alignment_holdout",
+    "source": "common/jinja/value.cpp",
+    "line": 619,
+    "text": "return mk_val<value_string>(args.get_pos(0)->as_string().strip(true, true, val_chars->as_string().str()));"
+  },
+  {
+    "split": "alignment_holdout",
+    "source": "common/common.cpp",
+    "line": 103,
+    "text": "return static_cast<int32_t>(siblings.size());"
+  },
+  {
+    "split": "alignment_holdout",
+    "source": "src/models/mimo2.cpp",
+    "line": 111,
+    "text": "const float freq_scale_l = model.get_rope_freq_scale(cparams, il);"
+  },
+  {
+    "split": "alignment_holdout",
+    "source": "common/speculative.cpp",
+    "line": 2592,
+    "text": "common_speculative_init_result::~common_speculative_init_result() = default;"
+  },
+  {
+    "split": "alignment_holdout",
+    "source": "common/jinja/value.cpp",
+    "line": 1136,
+    "text": "throw raised_exception(\"sort: unsupported object attribute comparison between \" + a->type() + \" and \" + b->type());"
+  },
+  {
+    "split": "alignment_holdout",
+    "source": "common/common.cpp",
+    "line": 825,
+    "text": "bool fs_validate_filename(const std::string & filename, bool allow_subdirs) {"
+  }
+]

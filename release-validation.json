@@ -1,0 +1,23 @@
+{
+  "clean_pinned_source_patch_applied": true,
+  "fresh_model_and_server_build": true,
+  "backend": "Matching prebuilt GGML SDK reused; no second CUDA-kernel rebuild claimed.",
+  "benchmark_runtime_source_difference": [
+    "src/models/models.h",
+    "src/models/qwen35.cpp"
+  ],
+  "original_ggml_source_matches_pinned_upstream": true,
+  "server_help_exit_code": 0,
+  "q4_and_q8_launcher_dry_runs": true,
+  "python_syntax_checks": true,
+  "model_card_metadata_validation": true,
+  "replayed_coding_outcomes": 39,
+  "replayed_coding_outcomes_match_recorded": true,
+  "replay_is_new_model_sampling": false,
+  "q4_reconstruction_byte_identical": true,
+  "q4_reconstruction_comparison": "cmp exit code 0 against the evaluated Q4 artifact",
+  "full_128k_quality_test": false,
+  "new_model_inference_during_release_packaging": false,
+  "private_path_and_credential_scan_passed": true,
+  "substantial_ai_assistance": true
+}

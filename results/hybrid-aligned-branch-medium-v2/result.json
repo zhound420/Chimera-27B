@@ -1,0 +1,217 @@
+{
+  "model": "qwen3.8-27b-hybrid-aligned-branch-medium-v2",
+  "reasoning_effort": "medium",
+  "split": "development",
+  "fixture_sha256": "ffffdd509c0f5f48ffc317aafb8ae3817d98c7633099852df0846941e5dbe6b3",
+  "max_tokens": 4096,
+  "sampling": {
+    "temperature": 1.0,
+    "top_p": 0.95,
+    "top_k": 20,
+    "min_p": 0.0,
+    "seed": 42
+  },
+  "promotion_evidence": false,
+  "codes": {
+    "merge": {
+      "passed": true,
+      "finish_reason": "stop",
+      "usage": {
+        "completion_tokens": 1133,
+        "prompt_tokens": 104,
+        "total_tokens": 1237,
+        "prompt_tokens_details": {
+          "cached_tokens": 0
+        }
+      },
+      "timings": {
+        "cache_n": 0,
+        "prompt_n": 104,
+        "prompt_ms": 746.229,
+        "prompt_per_token_ms": 7.175278846153846,
+        "prompt_per_second": 139.36740598395397,
+        "predicted_n": 1133,
+        "predicted_ms": 43261.647,
+        "predicted_per_token_ms": 38.217002650176674,
+        "predicted_per_second": 26.166363938941114
+      },
+      "wall_seconds": 44.850933376001194
+    },
+    "cache": {
+      "passed": true,
+      "finish_reason": "stop",
+      "usage": {
+        "completion_tokens": 1576,
+        "prompt_tokens": 63,
+        "total_tokens": 1639,
+        "prompt_tokens_details": {
+          "cached_tokens": 0
+        }
+      },
+      "timings": {
+        "cache_n": 0,
+        "prompt_n": 63,
+        "prompt_ms": 521.812,
+        "prompt_per_token_ms": 8.282730158730159,
+        "prompt_per_second": 120.73313760511449,
+        "predicted_n": 1576,
+        "predicted_ms": 60291.125,
+        "predicted_per_token_ms": 38.28007936507937,
+        "predicted_per_second": 26.123247824617636
+      },
+      "wall_seconds": 61.627156978996936
+    },
+    "toposort": {
+      "passed": true,
+      "finish_reason": "stop",
+      "usage": {
+        "completion_tokens": 1369,
+        "prompt_tokens": 57,
+        "total_tokens": 1426,
+        "prompt_tokens_details": {
+          "cached_tokens": 0
+        }
+      },
+      "timings": {
+        "cache_n": 0,
+        "prompt_n": 57,
+        "prompt_ms": 516.832,
+        "prompt_per_token_ms": 9.067228070175439,
+        "prompt_per_second": 110.2872887127732,
+        "predicted_n": 1369,
+        "predicted_ms": 52348.986,
+        "predicted_per_token_ms": 38.26680263157895,
+        "predicted_per_second": 26.1323113307295
+      },
+      "wall_seconds": 53.648077920021024
+    },
+    "json_patch": {
+      "passed": true,
+      "finish_reason": "stop",
+      "usage": {
+        "completion_tokens": 3855,
+        "prompt_tokens": 127,
+        "total_tokens": 3982,
+        "prompt_tokens_details": {
+          "cached_tokens": 0
+        }
+      },
+      "timings": {
+        "cache_n": 0,
+        "prompt_n": 127,
+        "prompt_ms": 581.011,
+        "prompt_per_token_ms": 4.574889763779527,
+        "prompt_per_second": 218.58450184247803,
+        "predicted_n": 3855,
+        "predicted_ms": 147985.041,
+        "predicted_per_token_ms": 38.39777919045148,
+        "predicted_per_second": 26.043172836638266
+      },
+      "wall_seconds": 149.4091413449496
+    },
+    "ttl_cache": {
+      "passed": true,
+      "finish_reason": "stop",
+      "usage": {
+        "completion_tokens": 1728,
+        "prompt_tokens": 118,
+        "total_tokens": 1846,
+        "prompt_tokens_details": {
+          "cached_tokens": 0
+        }
+      },
+      "timings": {
+        "cache_n": 0,
+        "prompt_n": 118,
+        "prompt_ms": 580.387,
+        "prompt_per_token_ms": 4.918533898305085,
+        "prompt_per_second": 203.31261727088997,
+        "predicted_n": 1728,
+        "predicted_ms": 66598.025,
+        "predicted_per_token_ms": 38.56284018529241,
+        "predicted_per_second": 25.93169992653686
+      },
+      "wall_seconds": 68.23107852600515
+    },
+    "utf8_stream": {
+      "passed": true,
+      "finish_reason": "stop",
+      "usage": {
+        "completion_tokens": 1317,
+        "prompt_tokens": 83,
+        "total_tokens": 1400,
+        "prompt_tokens_details": {
+          "cached_tokens": 0
+        }
+      },
+      "timings": {
+        "cache_n": 0,
+        "prompt_n": 83,
+        "prompt_ms": 697.177,
+        "prompt_per_token_ms": 8.399722891566265,
+        "prompt_per_second": 119.05154645090127,
+        "predicted_n": 1317,
+        "predicted_ms": 50849.732,
+        "predicted_per_token_ms": 38.63961398176292,
+        "predicted_per_second": 25.880175730326364
+      },
+      "wall_seconds": 52.4450382089708
+    },
+    "dependency_levels": {
+      "passed": true,
+      "finish_reason": "stop",
+      "usage": {
+        "completion_tokens": 1992,
+        "prompt_tokens": 86,
+        "total_tokens": 2078,
+        "prompt_tokens_details": {
+          "cached_tokens": 0
+        }
+      },
+      "timings": {
+        "cache_n": 0,
+        "prompt_n": 86,
+        "prompt_ms": 572.311,
+        "prompt_per_token_ms": 6.654779069767442,
+        "prompt_per_second": 150.26794872018885,
+        "predicted_n": 1992,
+        "predicted_ms": 77594.858,
+        "predicted_per_token_ms": 38.97280662983425,
+        "predicted_per_second": 25.658916728734784
+      },
+      "wall_seconds": 78.9864849629812
+    },
+    "overlap_search": {
+      "passed": true,
+      "finish_reason": "stop",
+      "usage": {
+        "completion_tokens": 1170,
+        "prompt_tokens": 72,
+        "total_tokens": 1242,
+        "prompt_tokens_details": {
+          "cached_tokens": 0
+        }
+      },
+      "timings": {
+        "cache_n": 0,
+        "prompt_n": 72,
+        "prompt_ms": 534.528,
+        "prompt_per_token_ms": 7.424,
+        "prompt_per_second": 134.69827586206895,
+        "predicted_n": 1170,
+        "predicted_ms": 45406.425,
+        "predicted_per_token_ms": 38.842108639863135,
+        "predicted_per_second": 25.74525521443276
+      },
+      "wall_seconds": 46.87949895998463
+    }
+  },
+  "other": {
+    "tool_retry": true,
+    "vision": true
+  },
+  "timing_note": "Concurrent user activity and background downloads are possible; not a controlled TPS benchmark.",
+  "coding_passed": 8,
+  "coding_total": 8,
+  "complete": true
+}

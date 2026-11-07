@@ -1,0 +1,7 @@
+[
+  [
+    "json_patch",
+    "Implement apply_patch(document, operations), supporting only top-level JSON object keys and operations add, replace, remove, test. Each op has op, path and optionally value. Paths begin / and encode ~ as ~0 and / as ~1. Reject invalid escapes or nested paths with ValueError. Empty-string key is valid as path /. add may overwrite; replace/remove/test require an existing key. Failed test or invalid operation raises ValueError. Return a deep copy, never mutate document, operations, or nested values. Python standard library only.",
+    "import copy\nd={'a':{'x':[1]},'a/b':3,'~':4,'':9}; old=copy.deepcopy(d)\no=apply_patch(d,[{'op':'replace','path':'/a~1b','value':8},{'op':'remove','path':'/~0'},{'op':'test','path':'/','value':9}])\nassert o['a/b']==8 and '~' not in o and d==old\no['a']['x'].append(2); assert d==old\nops=[{'op':'add','path':'/z','value':{'x':[]}}];o=apply_patch(d,ops);o['z']['x'].append(2);assert ops[0]['value']=={'x':[]}\nfor ops in [[{'op':'test','path':'/','value':0}],[{'op':'replace','path':'/missing','value':1}],[{'op':'remove','path':'/a/x'}],[{'op':'add','path':'/a~2','value':0}]]:\n try: apply_patch(d,ops)\n except ValueError: pass\n else: raise AssertionError('invalid patch accepted')\nassert d==old"
+  ]
+]

@@ -1,0 +1,12 @@
+{
+  "artifact": "<ai-storage>/experiments/qwen-deepseek-hybrid/Qwen27-DeepSeek-shared-layer0-ALIGNED-BRANCH-Q4_K_M.gguf",
+  "bytes": 16848316608,
+  "all_original_tensor_shapes_retained": true,
+  "original_ffn_bytes_verified": true,
+  "donor_tensors": 3,
+  "alignment": "ALIGNED",
+  "base_precision": "Q4_K_M",
+  "donor_precision": "Q8_0",
+  "quality_validated": false,
+  "is_sparse_moe": false
+}

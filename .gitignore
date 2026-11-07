@@ -1,0 +1,17 @@
+__pycache__/
+*.py[cod]
+*.gguf
+*.npz
+*.safetensors
+*.so
+*.dylib
+*.dll
+.cache/
+.venv/
+runtime/build/
+runtime/upstream/
+runtime/*-extract/
+runtime/*.tar.gz
+evaluation/baselines/
+evaluation/evaluation.lock
+throughput-reproduction/

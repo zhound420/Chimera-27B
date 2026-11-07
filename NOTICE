@@ -1,0 +1,32 @@
+Chimera-27B v0.1
+Published by zhound, 2026.
+
+This is an independent experimental derivative, not an official Qwen,
+DeepSeek, or llama.cpp release. No affiliation or endorsement is implied.
+
+Backbone, tokenizer, vision encoder, and MTP head:
+Qwen/Qwen3.8-27B, revision 37561816e66b5b9153b1b64c10968c18c1e6f4a0.
+Licensed under Apache License 2.0. See LICENSE and licenses/QWEN-APACHE-2.0.txt.
+
+Donor shared-expert weights:
+deepseek-ai/DeepSeek-V4.1-Flash-1017,
+revision 1bae0e1088993b9b82de08f59de5be5a34e42170.
+Copyright (c) 2023 DeepSeek. MIT License; see licenses/DEEPSEEK-MIT.txt.
+
+Runtime patch and calibration source excerpts derive from llama.cpp,
+revision 3cf03257f219afbe7334045ff7c6a06ac68c627d.
+See licenses/LLAMA-CPP-MIT.txt. This release does not submit changes upstream.
+
+Modifications: a calibrated DeepSeek layer-0 shared expert is added as three
+separate Q8_0 tensors. Input/output maps are folded into those tensors.
+A custom runtime adds its clamped SwiGLU output to the original Qwen FFN
+at scale 0.1. The Qwen base is converted/quantized to GGUF; original base
+tensor shapes are preserved. Q4 uses Q4_K_M; Q8 uses Q8_0.
+The shipped GGUF general.name strings retain the original experimental names.
+
+New release scripts, evaluation fixtures, and documentation are provided
+under Apache License 2.0. The derivative runtime patch retains the upstream
+MIT license. Upstream components retain their respective licenses.
+
+AI assistance was used substantially for implementation, calibration,
+testing, and documentation. Broad quality superiority has not been established.

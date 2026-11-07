@@ -1,0 +1,55 @@
+{
+  "complete": true,
+  "revision": "1bae0e1088993b9b82de08f59de5be5a34e42170",
+  "downloaded_tensor_bytes": 54224640,
+  "experts": {
+    "shared_experts": {
+      "w1": {
+        "shape": [
+          2304,
+          5120
+        ],
+        "rms": 0.019581474363803864
+      },
+      "w2": {
+        "shape": [
+          5120,
+          2304
+        ],
+        "rms": 0.020634720101952553
+      },
+      "w3": {
+        "shape": [
+          2304,
+          5120
+        ],
+        "rms": 0.021169152110815048
+      }
+    },
+    "experts.0": {
+      "w1": {
+        "shape": [
+          2304,
+          5120
+        ],
+        "rms": 0.021439332515001297
+      },
+      "w2": {
+        "shape": [
+          5120,
+          2304
+        ],
+        "rms": 0.021566540002822876
+      },
+      "w3": {
+        "shape": [
+          2304,
+          5120
+        ],
+        "rms": 0.02137846127152443
+      }
+    }
+  },
+  "selection": "interface controls: shared expert and routed expert 0; not selected as best coding experts",
+  "quality_measured": false
+}

@@ -1,0 +1,320 @@
+ggml_tensor * alpha_biased   = ggml_add(ctx0, alpha, model.layers[il].ssm_dt);
+int64_t n_seq_tokens, int64_t n_seqs, int64_t n_tokens, int64_t kv_head,
+static llama_ubatch dsv4_build_raw_write_ubatch(const llama_ubatch & ubatch) {
+auto [Qcur, Kcur, Vcur] = build_qkv(model.layers[il], cur,
+"usage:\n%s\n\nto show complete usage, run with -h",
+for (const auto & kv : LLM_ARCH_NAMES) { // NOLINT
+/* .apply             = */ llama_sampler_top_n_sigma_apply,
+if (!format.function_field.empty() && format.function_field != "function" &&
+llm_graph_input_attn_k_iswa * inp_attn = build_attn_inp_k_iswa();
+const llama_ubatch & llama_memory_hybrid_iswa_context::get_ubatch() const {
+if (!has_tools || inputs.tool_choice == COMMON_CHAT_TOOL_CHOICE_NONE) {
+inpSA = ggml_get_rows(ctx0, inpSA, inp_out_ids);
+ml.get_key_or_arr(LLM_KV_ROPE_DIMENSION_SECTIONS, hparams.rope_sections, 4, true);
+auto consume_numeric = [&]() -> std::string {
+for (uint32_t s = 0; s < sinfo.n_stream(); ++s) {
+[](common_params & params, const std::string & value) {
+{ LLM_TENSOR_CHANNEL_MIX_VALUE,                      "blk.%d.channel_mix_value" },
+function.name_suffix += suf_result.tags["ext"];
+ggml_tensor * cb_s = ggml_view_1d(ctx0, msa->cell_blk, n_kv,
+case LLM_TYPE_LARGE:         return "0.8B";
+auto inp_swa = std::make_unique<llm_graph_input_attn_k>(hparams, cparams, mctx_cur->get_swa());
+Qcur = build_norm(Qcur, model.layers[il].attn_q_norm, NULL, LLM_NORM_RMS, il);
+layer.time_mix_w1 = create_tensor(tn(LLM_TENSOR_TIME_MIX_W1, "weight", i), {n_embd, time_mix_extra_dim * 5}, 0);
+bpe_offsets = unicode_regex_split_custom_newlines(text, offsets);
+for (struct ggml_tensor * cur = ggml_get_first_tensor(ctx); cur; cur = ggml_get_next_tensor(ctx, cur)) {
+void llama_model_granite_swa::load_arch_tensors(llama_model_loader &) {
+std::string::npos) {  // handle both string and JSON obj variants
+init_quantize_state_counters(*qs, metadata);
+llama_pos llama_memory_hybrid::seq_pos_max(llama_seq_id seq_id) const {
+case LLM_TYPE_26B_A4B:       return "26B.A4B";
+return json{{"type", "string"}, {"delimiter", std::string(1, p.delimiter)}};
+return rule("single-quoted-string", [this]() {
+int32_t llama_relative_position_bucket(llama_pos x, llama_pos y, uint64_t n_buckets, bool bidirectional) {
+struct llama_sampler * common_sampler_get(const struct common_sampler * gsmpl) {
+cb(conv_states, "conv_states_reshaped", il);
+case LLM_TYPE_700M:          return "700M";
+ml.get_key(LLM_KV_CONVNEXT_BLOCK_COUNT,      hparams.convnext.n_layer);
+std::vector<ggml_backend_buffer_ptr> bufs;
+(cparams.pooling_type == LLAMA_POOLING_TYPE_RANK && (arch == LLM_ARCH_QWEN3 || arch == LLM_ARCH_QWEN3VL)) // qwen3 reranking & embedding models use last token
+case LLAMA_FTYPE_MOSTLY_Q5_K_M:  return GGML_TYPE_Q5_K;
+sinfos_read(std::move(sinfos_swa_read)),
+cur   = ggml_get_rows(ctx0,   cur, inp_out_ids);
+return get_tensor_config_impl(GGML_BACKEND_SPLIT_AXIS_1, "attn_output_a.weight");
+llama_model_quantize_params llama_model_quantize_default_params() {
+size_t args_in_prefix = diff.prefix.find('{', func_name_in_prefix);
+if (il == n_layer - 1 && inp_out_ids && cparams.embeddings_nextn_masked) {
+const int res = llama_chat_apply_template(tmpl.c_str(), chat, 1, true, nullptr, 0);
+LOG_DBG(ANSI_ORANGE "%s: Template application failed\n" ANSI_RESET , __func__);
+ggml_row_size(Qcur->type, n_embd_head_qk_nope));
+ggml_tensor * k_pe = ggml_view_3d(ctx0, kv_cmpr_pe, n_embd_head_qk_rope, 1, n_tokens,
+ml.get_key(LLM_KV_ATTENTION_INDEXER_TOP_K,      hparams.indexer_top_k);
+ggml_tensor * llama_model_gemma3n::graph::altup_correct(ggml_tensor * predictions, ggml_tensor * activated, int il) {
+).set_examples({LLAMA_EXAMPLE_COMMON, LLAMA_EXAMPLE_EXPORT_LORA}));
+if (ud->model->arch == LLM_ARCH_HRM_TEXT) {
+{ LLM_KV_ATTENTION_COMPRESS_ROPE_FREQ_BASE,      "%s.attention.compress_rope_freq_base"      },
+std::string name_field = format.name_field;
+auto [cli, parts] = common_http_client(url);
+"compute multiple choice score over random tasks from datafile supplied with -f",
+layer.nextn.eh_proj          = create_tensor(tn(LLM_TENSOR_NEXTN_EH_PROJ,          "weight", i), { 2 * n_embd, n_embd }, flags);
+exit(1); // for other exceptions, we exit with status code 1
+output_norm = create_tensor(tn(LLM_TENSOR_OUTPUT_NORM, "weight"), {n_embd}, 0);
+kv->get_lid_state()->get_state_size(), kv->get_lid()->get_size(), kv->get_lid_state()->get_n_stream(),
+Qcur, Kcur, Vcur, nullptr, nullptr, nullptr, 1.0f/sqrtf(float(n_rot)), il);
+GGML_ASSERT(n_candidates == ggml_nelements(logits));
+ggml_row_size(Qcur->type, n_embd_head_k_mla),
+{ LLM_ARCH_MINIMAX_M2,       "minimax-m2"       },
+if (ggml_backend_reg_dev_get(reg, i) == dev) {
+layer.ffn_down   = create_tensor(tn(LLM_TENSOR_FFN_DOWN, "weight", i), {n_ff, n_embd}, 0);
+if (tensor_name.substr(0, 4) == "blk.") {
+ggml_tensor * state = ggml_reshape_3d(ctx0, rows, state_cols, channels, n_seqs);
+kv_cmpr = ggml_reshape_3d(ctx0, kv_cmpr, kv_lora_rank, 1, n_tokens);
+if (hparams.f_final_logit_softcapping) {
+cur = build_norm(cur, model.output_norm, NULL, LLM_NORM, -1);
+if (concat_typed_text || contains_media()) {
+layer.time_mix_a1 = create_tensor(tn(LLM_TENSOR_TIME_MIX_A1, "weight", i), {n_embd, n_lora_iclr}, 0);
+const auto & k_idxs = inp->get_k_idxs_mla();
+Kcur = build_lora_mm(layer.wk, cur, layer.wk_s);
+output_norm = create_tensor(tn(LLM_TENSOR_OUTPUT_NORM, "weight"), {n_embd}, 0);
+string_format("number of tokens to draft for speculative decoding (default: %d)", params.speculative.draft.n_max),
+[](common_params & params, const std::string & value) {
+fail(path, "properties must be an object");
+layer.ffn_gate_inp = create_tensor(tn(LLM_TENSOR_FFN_GATE_INP, "weight", i), {n_embd, n_expert}, 0);
+auto res = parser.parse_anywhere_and_extract(str);
+ret[buft] += ggml_backend_buffer_get_size(buf.get());
+{ "\\p{Lm}", unicode_cpt_flags::LETTER }, // Modifier letter
+const int64_t qk_k = ggml_blck_size(target_type);
+plans_hca(dsv4_build_comp_plans(this->ubatches, DSV4_HCA_RATIO, false,
+void llama_grammar_accept_str(struct llama_grammar & grammar, const std::string & piece) {
+/* .accept            = */ common_reasoning_budget_accept,
+std::unique_ptr<llm_graph_context> llama_model_openelm::build_arch_graph(const llm_graph_params & params) const {
+for (size_t i = 0; i < cur_p->size; ++i) {
+{ LLM_KV_CONTEXT_LENGTH,                    "%s.context_length"                    },
+col_sum = ggml_permute(ctx0, col_sum, 1, 0, 2, 3);
+q = ggml_rope_ext(ctx0, q, inp_pos, nullptr, n_rot, rope_type, n_ctx_orig, freq_base, freq_scale, ext_factor,
+ggml_tensor * ssm_states_all  = mctx_cur->get_s_l(il);
+/* .name              = */ llama_sampler_empty_name,
+json common_chat_msg::to_json_oaicompat(bool concat_typed_text) const {
+result.push_back(0x80 | ((cpt >> 12) & 0x3f));
+if (il == n_layer - 1 && inp_out_ids && (!cparams.embeddings_nextn || cparams.embeddings_nextn_masked)) {
+case GGML_TYPE_Q1_0:    ftype = LLAMA_FTYPE_MOSTLY_Q1_0;    break;
+void llama_model_rwkv7::load_arch_hparams(llama_model_loader & ml) {
+Kcur = ggml_reshape_3d(ctx0, Kcur, n_embd_head_k, n_head_kv_l, n_tokens);
+q  = llama_mul_mat_hadamard(ctx0, q, k_rot);
+GGML_ASSERT(hparams.n_layer_nextn > 0 && "COHERE2MOE MTP requires n_layer_nextn > 0");
+return new llama_model_qwen4exp(params);
+ml.get_key_or_arr(LLM_KV_ATTENTION_COMPRESS_RATIOS, hparams.dsv4_compress_ratios, hparams.n_layer_all, false);
+{ LLM_KV_HRM_LAYERS_PER_STACK,              "%s.hrm.layers_per_stack"              },
+llama_token        pending_token_id;  // token ID of selected token
+ggml_view_1d(ctx0, mctx_cur->get_s_l(il), hparams.n_embd_s() * n_seqs,
+ggml_tensor * gate_act = ggml_silu(ctx0, cur);
+layer.nextn.embed_tokens     = create_tensor(tn(LLM_TENSOR_NEXTN_EMBED_TOKENS,     "weight", il), { n_embd, n_vocab },     mtp_flags|TENSOR_NOT_REQUIRED);
+buft_list.emplace_back(dev, ggml_backend_dev_buffer_type(dev));
+const int kid = gguf_find_key(ctx, key.c_str());
+const std::vector<llama_tokens> & end_seqs,
+ext_factor, attn_factor, beta_fast, beta_slow);
+shared_gate = ggml_sigmoid(ctx0, shared_gate);
+p.tool_open(p.literal(" to=") + p.until("<|message|>") +
+const llama_kv_cache_dsv4_context::comp_plan & llama_kv_cache_dsv4_context::get_lid_plan(const llama_ubatch & ubatch) const {
+bool common_params_parse(int argc, char ** argv, common_params & params, llama_example ex, void(*print_usage)(int, char **)) {
+res &= self_k_idxs_lid->ne[0] == params.ubatch.n_tokens;
+if (!cparams.embeddings_nextn_masked && inp_out_ids) {
+model.layers[il].wo, NULL, model.layers[il].wo_s,
+return "CharRepeat(" + p.pattern + ", " + std::to_string(p.min_count) + ", unbounded)";
+ml.get_key(LLM_KV_EXPERT_SHARED_FEED_FORWARD_LENGTH, hparams.n_ff_shexp, false);
+throw common_params_fit_exception("llama_max_tensor_buft_overrides() == "
+/*.max_buf_size                =*/ LLAMA_QUANT_MAX_BUF_SIZE
+const llama_kv_cache_dsv4_context::comp_plan & llama_kv_cache_dsv4_context::get_lid_plan() const {
+LOG_DBG("Using specialized template: DeepSeek V3.2/V4\n");
+ggml_row_size(kv_cmpr_pe->type, kv_lora_rank + n_embd_head_qk_rope), 0);
+value effort = ctx.get_val("reasoning_effort");
+if (hparams.swa_type == LLAMA_SWA_TYPE_NONE) {
+/* .free              = */ llama_sampler_penalties_free,
+cur = build_norm(inpL, model.layers[il].attn_norm, nullptr, LLM_NORM_RMS, il);
+int                       slot_base) const {
+case 16:  type = LLM_TYPE_17B_16E; break;
+ggml_row_size(kv_cmpr_pe->type, kv_lora_rank + n_embd_head_qk_rope),
+res->add_fused_node({LLM_FUSED_OP_DSV4_HC_COMB, *comb, il});
+"- auto: mmap, unless a device does not support it\n"
+for (size_t i = 0; i < cur_p->size; ++i) {
+layer.ffn_gate_shexp_in_s = create_tensor(tn(LLM_TENSOR_FFN_GATE_SHEXP, "input_scale", i), {1}, TENSOR_NOT_REQUIRED);
+case GGML_TYPE_Q2_K:    ftype = LLAMA_FTYPE_MOSTLY_Q2_K;    break;
+const uint32_t kv_size = kv->get_size();
+layer.ffn_gate_inp = create_tensor(tn(LLM_TENSOR_FFN_GATE_INP, "weight", i), {n_embd, n_expert}, 0);
+LLAMA_LOG_INFO("%s: n_ff_shexp            = %d\n",     __func__, hparams.n_ff_shexp);
+if (msg_prv.content != msg_new.content) {
+common_json       & common_json::back()        { return as_common(as_json(this).back()); }
+ggml_view_2d(ctx0, kv_cmpr_pe, kv_lora_rank, n_tokens,
+if (item["lfs"].contains("oid") && item["lfs"]["oid"].is_string()) {
+uint8_t * data = (uint8_t *) mapping->addr() + weight->offs;
+ggml_tensor * inp_pos = build_inp_pos();
+static const char * llama_sampler_mirostat_v2_name(const struct llama_sampler * /*smpl*/) {
+case LLM_TYPE_109M:          return "109M";
+{ LLM_TENSOR_TIME_MIX_V2,                            "blk.%d.time_mix_v2" },
+common_chat_params common_chat_params_init_gemma4(const common_chat_template &    tmpl,
+llama_model_neo_bert::graph::graph(const llama_model & model, const llm_graph_params & params) : llm_graph_context(params) {
+hparams.rope_freq_base_train_swa  = hparams.rope_freq_base_train;
+runs.push_back({idxs[i0], idxs[i1 - 1] + 1});
+[](const mem_cell & cell){ return !cell.is_empty(); });
+uint32_t llama_grammar_parser::get_symbol_id(const char * src, size_t len) {
+value_to_add += normalize_container_value(value_content);
+ggml_tensor * ik = ggml_mul_mat(ctx0, layer.indexer_attn_k, cur);
+return llama_model_load_from_file_impl(nullptr, nullptr, nullptr, splits.front(), splits, /*file*/ nullptr, params);
+Qcur = build_norm(Qcur, model.layers[il].attn_q_norm, nullptr, LLM_NORM_RMS, il);
+for (uint32_t i = 0; i < cell_count; ++i) {
+std::fill(hparams.xielu_alpha_n.begin(), hparams.xielu_alpha_n.end(), 0.0f);
+cur = ggml_add(ctx0, moe_out, ffn_shexp);
+ggml_tensor * hca_source_kv   = nullptr;
+layer.ffn_norm = create_tensor(tn(LLM_TENSOR_FFN_NORM, "weight", i), {n_embd}, 0);
+auto sinfos_base = mem_attn->get_base()->prepare(ubatches);
+layer.wo = create_tensor(tn(LLM_TENSOR_ATTN_OUT, "weight", i), {n_embd_head_k * n_head, n_embd}, 0);
+ggml_tensor * inp_out_ids = build_inp_out_ids();
+{ LLM_KV_SSM_DT_B_C_RMS,     "%s.ssm.dt_b_c_rms"     },
+cur = build_lora_mm(model.output, cur, model.output_s);
+std::pair<ggml_tensor *, ggml_tensor *> llama_model_qwen3next::graph::build_qkvz(
+layer.ffn_norm_b = create_tensor(tn(LLM_TENSOR_FFN_NORM, "bias", i),   {n_embd}, 0);
+[&](uint32_t il) { return il >= hparams.n_layer(); };
+std::string  name     = function.at("name");
+return common_peg_parse_result(COMMON_PEG_PARSE_RESULT_FAIL, start_pos);
+layer.rope_freqs = create_tensor(tn(LLM_TENSOR_ROPE_FREQS, "weight", i), {n_rot/2}, TENSOR_NOT_REQUIRED | (i != 0 ? TENSOR_DUPLICATED : 0));
+ext_factor, attn_factor, beta_fast, beta_slow
+std::fill(hparams.n_expert_used_arr.begin(), hparams.n_expert_used_arr.end(), 0);
+if (diff.left.empty() && diff.right.empty()) {
+tmpl, params, [&](template_params & p) {
+output = create_tensor(tn(LLM_TENSOR_TOKEN_EMBD, "weight"), {n_embd, n_vocab}, TENSOR_DUPLICATED);
+llama_memory_status llama_kv_cache_iswa_context::get_status() const {
+inp->embd = ggml_new_tensor_2d(ctx0, GGML_TYPE_F32, hparams.n_embd_inp(), n_tokens);
+ggml_build_forward_expand(gf, lid_state_kv);
+if (!layer.ffn_down_exps_s && layer.ffn_down_exps) {
+if (num_whitespaces > 1 && _get_cpt(pos+num_whitespaces) != OUT_OF_RANGE) {
+builder.add_rule("root", string_join(trigger_names, " | "));
+ml.llm_kv(LLM_KV_PLE_LAYERS).c_str(), n_ple));
+return new llama_model_dots3note(params);
+for (size_t i = 0; i < cur_p->size; ++i) {
+const int64_t Hd  = hparams.indexer_n_head;   // one indexer head per GQA group
+{ COMMON_GRAMMAR_TRIGGER_TYPE_WORD, "<function" },
+print_rule(file, uint32_t(i), rules[i], symbol_id_names);
+if (hparams.swa_type != LLAMA_SWA_TYPE_NONE) {
+llama_model_openelm::graph::graph(const llama_model & model, const llm_graph_params & params) : llm_graph_context(params) {
+void llama_model_stablelm::load_arch_hparams(llama_model_loader & ml) {
+result.emplace_back(0xFFFD); // replacement character
+Vcur = ggml_clamp(ctx0, Vcur, -hparams.f_clamp_kqv, hparams.f_clamp_kqv);
+case 20: type = LLM_TYPE_16B_A1B; break;
+const int32_t tail_id = cells[seq_id].tail;
+result.push_back(0xc0 | ((cpt >> 6) & 0x1f));
+while (_get_flags(pos).is_letter || _get_flags(pos).is_accent_mark) {
+res = res & kv_swa ->seq_rm(seq_id, p0, p1);
+void llama_model_granite_hybrid::load_arch_hparams(llama_model_loader & ml) {
+res->add_fused_node({LLM_FUSED_OP_LIGHTNING_INDEXER, indexer_score, il});
+LLAMA_LOG_WARN("%s: the V embeddings have different sizes across layers and FA is not enabled - padding V cache to %d\n",
+struct ggml_tensor * llama_model_loader::get_tensor_meta(const char * name) const {
+{ LLM_TENSOR_INDEXER_PROJ,                           "blk.%d.indexer.proj" },
+const std::string rope_scaling_type = llama_rope_scaling_type_name(hparams.rope_scaling_type_train);
+probs = ggml_sigmoid(ctx0, logits); // [n_expert, n_tokens]
+/* attn_v_trans      */ !cparams.flash_attn,
+GGML_ABORT("fatal error: gated squared relu not implemented");
+return std::make_unique<llama_memory_hybrid_iswa_context>(LLAMA_MEMORY_STATUS_FAILED_PREPARE);
+plan.mmproj = find_best_mmproj(all, primary.path);
+for (uint32_t p = 0; p < ubatch.n_pos; ++p) {
+ggml_tensor * inp_out_ids = build_inp_out_ids();
+ml.get_key(LLM_KV_EXPERT_GATING_FUNC,         hparams.expert_gating_func);
+freq_scale, ext_factor, attn_factor, beta_fast, beta_slow);
+model.layers[il].ffn_down, model.layers[il].ffn_down_b, NULL,
+ml.get_key(LLM_KV_FINAL_LOGIT_SOFTCAPPING,     hparams.f_final_logit_softcapping, false);
+llm_graph_context::llm_graph_context(const llm_graph_params & params) :
+common_ngram_cache common_ngram_cache_load(const std::string & filename) {
+return get_tensor_config_impl(GGML_BACKEND_SPLIT_AXIS_1, "ffn_down.weight", "ffn_down_exps.weight");
+std::vector<common_sampler_type> samplers;
+std::vector<common_peg_parser> optional_args;
+tool_calls = p.trigger_rule("tool-call", format.section_start + tool_choice + format.section_end);
+mem_recr->seq_cp(seq_id_src, seq_id_dst, p0, p1);
+if (p.min_count == 1 && p.max_count == -1) {
+ggml_tensor * k_conv = ggml_view_4d(ctx0, conv_qkv_mix, head_k_dim, num_k_heads, n_seq_tokens, n_seqs,
+output_norm = create_tensor(tn(LLM_TENSOR_OUTPUT_NORM, "weight"), {n_embd}, 0);
+layer.ffn_down_shexp = create_tensor(tn(LLM_TENSOR_FFN_DOWN_SHEXP, "weight", i), {n_ff_shexp, n_embd}, flags);
+{LLM_TENSOR_ATTN_SUB_NORM,              {LLM_TENSOR_LAYER_REPEATING, GGML_OP_MUL}},
+cur = build_lora_mm(model.output, cur, model.output_s);
+cur = build_norm(cur, head_norm_w, nullptr, LLM_NORM_RMS, -1);
+for (int s = 0; s < udata->n_seq_id[i]; ++s) {
+params.sampling.temp = 0.2; // lower temp by default for better quality
+gguf_set_arr_data(gguf_ctx, llm_kv(key).c_str(), GGUF_TYPE_BOOL, value.data(), n_values);
+"'auto' enables colors when output is to a terminal",
+ml.get_key(LLM_KV_EXPERT_GATING_FUNC,                hparams.expert_gating_func, false);
+ggml_set_name(sctx->inp_counts, "penalties_counts");
+return llama_sampler_init_top_n_sigma(ctx->n);
+const int32_t s_type_i = (int32_t)s_l[il]->type;
+layer.ffn_down = create_tensor(tn(LLM_TENSOR_FFN_DOWN, "weight", i), {  n_ff, n_embd}, 0);
+data.format            = COMMON_CHAT_FORMAT_PEG_GEMMA4;
+{ LLM_KV_ATTENTION_ICLR_LORA_RANK,               "%s.attention.iclr_lora_rank"               },
+attn_ctx->get_swa()->set_input_v_rot(inp_attn->self_v_rot_swa);
+{ LLM_TENSOR_OUTPUT_NORM,                            "output_norm" },
+int repeat_len = ctx->dry_repeat_count[i];
+return ggml_view_2d(ctx, state, state->ne[0], get_n_rows(), state->nb[1], 0*row_size);
+GGML_ASSERT(hparams.swa_type == LLAMA_SWA_TYPE_NONE && "Use llama_kv_cache_iswa for SWA");
+void llama_model_exaone::load_arch_hparams(llama_model_loader & ml) {
+ggml_tensor * cur_norm = build_norm(inpL, model.layers[il].attn_norm, nullptr, LLM_NORM_RMS, il);
+output = create_tensor(tn(LLM_TENSOR_OUTPUT, "weight"), {n_embd, n_vocab}, TENSOR_NOT_REQUIRED);
+float * llama_get_sampled_logits_ith(llama_context * ctx, int32_t i) {
+ml.get_key(LLM_KV_VOCAB_SIZE, n_vocab, false) || ml.get_arr_n(LLM_KV_TOKENIZER_LIST, n_vocab, false);
+layer.ffn_gate = create_tensor(tn(LLM_TENSOR_FFN_GATE, "weight", i), {n_embd,   n_ff}, 0);
+GGML_ASSERT(n_blocks > 0 && n_tokens % n_blocks == 0);
+value val_check = args.get_kwarg_or_pos("boolean", 2);
+const int   n_rot_l       = is_swa_il ? hparams.n_rot_swa : n_rot;
+ggml_tensor * Vcur = build_lora_mm(layer.wv, inp_g, layer.wv_s);
+if (fragment.type == FRAGMENT_BUFFER_VARIANT_TYPE_RAW_TEXT) {
+throw std::runtime_error("unexpectedly reached end of file");
+llama_vocab_eos(vocab_tgt), llama_vocab_eos(vocab_dft));
+const int64_t dec_n_layer = hparams.dec_n_layer;
+special_eog_ids.insert(special_fim_pad_id);
+const int base = val_base->is_undefined() ? 10 : val_base->as_int();
+ggml_tensor * ffn_inp = ggml_add(ctx0, cur, inpSA);
+const auto * cur_p = common_sampler_get_candidates(smpl, true);
+static std::map<std::string, std::map<std::string, std::string>> parse_ini_from_file(const std::string & path) {
+layer.attn_q_norm = create_tensor(tn(LLM_TENSOR_ATTN_Q_NORM, "weight", i), {n_embd_head_k}, 0);
+ggml_tensor * prev = ggml_view_2d(ctx0, tokens, 1, n_blocks, token_stride, 0);
+ggml_tensor * q_w = layer.wq, * k_w = layer.wk, * v_w = layer.wv;
+gf_res_reserve.reset(new llm_graph_result(max_nodes));
+const int64_t n_seq_tokens = ubatch.n_seq_tokens;
+data.grammar      = build_grammar([&](const common_grammar_builder & builder) {
+LLAMA_LOG_WARN("warning: failed to VirtualUnlock buffer: %s\n",
+llm_graph_input_attn_kv      * inp_attn_kv   = has_swa ? nullptr : build_attn_inp_kv();
+if (token_multibyte != LLAMA_TOKEN_NULL) {
+const int64_t n_embd_head = hparams.n_embd_head_v();
+} else if (tmpl == LLM_CHAT_TEMPLATE_MISTRAL_V7 || tmpl == LLM_CHAT_TEMPLATE_MISTRAL_V7_TEKKEN) {
+layer.ffn_gate_inp  = create_tensor(tn(LLM_TENSOR_FFN_GATE_INP,  "weight", i), {n_embd, n_expert}, 0);
+"'s|'t|'re|'ve|'m|'ll|'d| ?\\p{L}+| ?\\p{N}+| ?[^\\s\\p{L}\\p{N}]+|\\s+(?!\\S)",
+auto tmpl_contains = [&tmpl](const char * haystack) -> bool {
+Qcur = ggml_reshape_3d(ctx0, Qcur, n_embd_head, n_head,    n_tokens);
+cur = build_norm(inpL, model.output_norm, NULL, LLM_NORM_RMS, -1);
+std::string string_from(const struct llama_context * ctx, const struct llama_batch & batch) {
+layer.ffn_gate_exps = create_tensor(tn(LLM_TENSOR_FFN_GATE_EXPS, "weight", i), {n_embd,   n_ff, n_expert}, TENSOR_NOT_REQUIRED);
+std::string  name     = function.at("name");
+ggml_row_size(kv->type, n_embd_head_qk_nope));
+cparams.yarn_attn_factor  = params.yarn_attn_factor;
+layer.attn_k_norm = create_tensor(tn(LLM_TENSOR_ATTN_K_NORM, "weight", i), {n_embd_head_k}, 0);
+for (size_t i = 0; i < chat.size(); i++) {
+return _add_rule(name, "\"\\\"\" (" + rule + ") \"\\\"\"");
+len, size, llama_format_win_err(GetLastError()).c_str());
+ggml_tensor * feat = ggml_concat(ctx0, ggml_cont(ctx0, conf_inp_i), w1_prev, 0);
+auto element_of = [&](const std::string & tag, const common_chat_schema & schema, const std::string & rule_name) {
+return std::make_unique<graph>(*this, params);
+layer.ffn_up_exps   = create_tensor(tn(LLM_TENSOR_FFN_UP_EXPS,   "weight", i), {  n_embd, n_ff_exp, n_expert}, 0);
+Kcur = ggml_rope(ctx0, Kcur, inp_pos, n_embd_head, rope_type);
+COM_ERR("failed to create context with model '%s'\n", params.model.path.c_str());
+attr = (llama_token_attr) (attr | LLAMA_TOKEN_ATTR_CONTROL);
+GGML_ASSERT(model_other->output != nullptr && "DFlash decoder requires the target model's output projection");
+return std::make_unique<graph>(*this, params);
+Qcur, Kcur, Vcur, nullptr, nullptr, nullptr, 1.0f / sqrtf(float(n_embd_head)), il);
+default:                            token_data.attr = LLAMA_TOKEN_ATTR_UNDEFINED;    break;
+for (int64_t i = i_draft_beg; i < block_drafts; ++i) {
+ml.get_key(LLM_KV_EXPERT_SHARED_COUNT,               hparams.n_expert_shared, false);
+throw std::runtime_error("failed to allocate compute pp buffers");
+for (size_t i = src_j; i < mbuf_cur.cpy.size(); ++i) {
+throw std::runtime_error(format("read error: %s", GetErrorMessageWin32(GetLastError()).c_str()));
+{"array", {"\"[\" space ( value (\",\" space value)* )? space \"]\"", {"value"}}},
+return mk_val<value_string>(args.get_pos(0)->as_string().strip(true, true, val_chars->as_string().str()));
+return static_cast<int32_t>(siblings.size());
+const float freq_scale_l = model.get_rope_freq_scale(cparams, il);
+common_speculative_init_result::~common_speculative_init_result() = default;
+throw raised_exception("sort: unsupported object attribute comparison between " + a->type() + " and " + b->type());
+bool fs_validate_filename(const std::string & filename, bool allow_subdirs) {

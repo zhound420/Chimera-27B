@@ -1,0 +1,43 @@
+"""Frozen independent functional probes; excluded from alignment and donor selection."""
+import baseline as M
+HOLDOUT=[
+ ('nested_transactions','Implement class TransactionalMap(initial=None), with get(key, default=None), put(key,value), delete(key), begin(), commit(), rollback(). Changes are visible immediately. delete of a missing key is a no-op. Nested transactions are supported: committing an inner transaction retains its changes, but rolling back its outer transaction must undo them. commit/rollback with no active transaction raise RuntimeError. Mutating the map must not mutate the initial dict. Standard library only.',
+ """initial={'a':1};m=TransactionalMap(initial);m.begin();m.put('a',2);m.begin();m.delete('a');m.put('b',3);m.commit();assert m.get('a','missing')=='missing' and m.get('b')==3;m.rollback();assert m.get('a')==1 and m.get('b') is None and initial=={'a':1}
+m.begin();m.put('a',4);m.begin();m.put('a',5);m.put('x',6);m.rollback();assert m.get('a')==4 and m.get('x') is None;m.commit();assert m.get('a')==4
+m.begin();m.put('z',None);m.begin();m.delete('z');m.rollback();assert m.get('z',9) is None;m.rollback();assert m.get('z',9)==9
+m.delete('missing')
+for method in [m.commit,m.rollback]:
+ try:method()
+ except RuntimeError:pass
+ else:raise AssertionError('missing transaction accepted')"""),
+ ('exact_arithmetic','Implement evaluate(expression) returning fractions.Fraction. Parse unsigned decimal integer literals, ASCII whitespace, parentheses, binary + - * /, and unary +/-. Standard precedence, left associativity for binary operators, arbitrary consecutive unary signs. Reject any other characters, empty expressions, missing operands, implicit multiplication, or unmatched parentheses with ValueError. Division by zero raises ZeroDivisionError. Do not use eval, exec, ast, or third-party packages.',
+ """from fractions import Fraction
+for expression,expected in [('1+2*3',7),('8/4/2',1),('-(-2+3)*4',-4),('--2+-+3',-1),(' 1 / (2 + 1) ',Fraction(1,3)),('1--2',3),('-(1+2)/+4',Fraction(-3,4)),('00012',12)]:
+ value=evaluate(expression);assert isinstance(value,Fraction) and value==expected,(expression,value)
+for expression in ['', ' ', '1 2', '2(3)', '(1', '1)', '1+', '*2', '1//2', '1.5', 'x', '()', '1e2']:
+ try:evaluate(expression)
+ except ValueError:pass
+ else:raise AssertionError(('accepted invalid expression',expression))
+try:evaluate('1/(2-2)')
+except ZeroDivisionError:pass
+else:raise AssertionError('zero divisor accepted')"""),
+ ('strong_components','Implement strongly_connected_components(graph). graph maps string nodes to lists of directed outgoing neighbors. Include neighbor-only nodes and ignore duplicate edges. Return every strongly connected component as a sorted list of node names, with the outer list sorted lexicographically. Do not mutate graph. Empty graph returns []. Standard library only; graph traversal should be O(V+E), excluding output sorting.',
+ """import random,copy
+assert strongly_connected_components({})==[]
+assert strongly_connected_components({'a':['b'],'b':['a','c'],'c':['c'],'d':['e']})==[['a','b'],['c'],['d'],['e']]
+r=random.Random(718293)
+for _ in range(80):
+ nodes=list('abcdef')[:r.randrange(1,7)];g={n:[v for v in nodes if r.random()<.3] for n in nodes};before=copy.deepcopy(g)
+ def reachable(start):
+  seen={start};todo=[start]
+  while todo:
+   for v in g[todo.pop()]:
+    if v not in seen:seen.add(v);todo.append(v)
+  return seen
+ reach={n:reachable(n) for n in nodes};remaining=set(nodes);expected=[]
+ while remaining:
+  n=min(remaining);component=sorted(v for v in remaining if v in reach[n] and n in reach[v]);expected.append(component);remaining.difference_update(component)
+ assert strongly_connected_components(g)==sorted(expected) and g==before"""),
+]
+if __name__=='__main__':
+ M.B.CODE_CASES=[];M.EXTRA=HOLDOUT;M.main()

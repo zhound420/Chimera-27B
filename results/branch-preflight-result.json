@@ -1,0 +1,8 @@
+{
+  "tokens_match": [
+    true,
+    true,
+    true
+  ],
+  "max_chosen_logprob_difference": 0.0
+}

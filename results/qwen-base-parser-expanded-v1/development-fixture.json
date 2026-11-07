@@ -1,0 +1,7 @@
+[
+  [
+    "exact_arithmetic",
+    "Implement evaluate(expression) returning fractions.Fraction. Parse unsigned decimal integer literals, ASCII whitespace, parentheses, binary + - * /, and unary +/-. Standard precedence, left associativity for binary operators, arbitrary consecutive unary signs. Reject any other characters, empty expressions, missing operands, implicit multiplication, or unmatched parentheses with ValueError. Division by zero raises ZeroDivisionError. Do not use eval, exec, ast, or third-party packages.",
+    "from fractions import Fraction\nfor expression,expected in [('1+2*3',7),('8/4/2',1),('-(-2+3)*4',-4),('--2+-+3',-1),(' 1 / (2 + 1) ',Fraction(1,3)),('1--2',3),('-(1+2)/+4',Fraction(-3,4)),('00012',12)]:\n value=evaluate(expression);assert isinstance(value,Fraction) and value==expected,(expression,value)\nfor expression in ['', ' ', '1 2', '2(3)', '(1', '1)', '1+', '*2', '1//2', '1.5', 'x', '()', '1e2']:\n try:evaluate(expression)\n except ValueError:pass\n else:raise AssertionError(('accepted invalid expression',expression))\ntry:evaluate('1/(2-2)')\nexcept ZeroDivisionError:pass\nelse:raise AssertionError('zero divisor accepted')"
+  ]
+]
